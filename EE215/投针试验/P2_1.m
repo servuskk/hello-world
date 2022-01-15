@@ -1,0 +1,10 @@
+tic
+N=10^7;
+d=2;
+l=1;
+x=d*rand(N,1);
+theta=2*pi*rand(N,1);
+y=abs(x-l*sin(theta)-d/2)-d/2;
+a=sum(y>=0);
+N/a
+toc
