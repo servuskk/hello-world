@@ -159,4 +159,4 @@ dmypy.json
 *.app
 
 .idea
-
+.DS_Store
