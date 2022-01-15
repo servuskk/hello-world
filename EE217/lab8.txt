@@ -1,0 +1,2007 @@
+Starting: "prj_run Export -impl impl8"
+
+
+************************************************************
+**  Lattice Synthesis Engine                              **
+************************************************************
+
+synthesis -f "ADC_voltmeter_impl8_lattice.synproj"
+synthesis:  version Diamond (64-bit) 3.11.0.396.4
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+Thu Dec 03 18:51:22 2020
+
+
+Command Line:  synthesis -f ADC_voltmeter_impl8_lattice.synproj -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml 
+
+INFO - Lattice Synthesis Engine Launched.
+Synthesis options:
+The -a option is MachXO2.
+The -s option is 4.
+The -t option is CSBGA132.
+The -d option is LCMXO2-4000HC.
+Using package CSBGA132.
+Using performance grade 4.
+                                                          
+
+##########################################################
+
+### Lattice Family : MachXO2
+
+### Device  : LCMXO2-4000HC
+
+### Package : CSBGA132
+
+### Speed   : 4
+
+##########################################################
+
+                                                          
+
+INFO - User-Selected Strategy Settings
+Optimization goal = Balanced
+Top-level module name = ADC_voltmeter_top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/lscc/diamond/3.11_x64/ispfpga/xo2c00/data (searchpath added)
+-p C:/Users/admin/Desktop/Lab8(2)/impl8 (searchpath added)
+-p C:/Users/admin/Desktop/Lab8(2) (searchpath added)
+VHDL library = work
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/lcdrgb.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/lcd_ram.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter_top.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/bcd.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/Lab8_74HC595.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/LAB8_I2C.vhd
+VHDL design file = C:/Users/admin/Desktop/Lab8(2)/LAB8_voltage.vhd
+NGD file = ADC_voltmeter_impl8.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file D:/lscc/diamond/3.11_x64/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
+Compile design.
+Compile Design Begin
+INFO - The default VHDL library search path is now "C:/Users/admin/Desktop/Lab8(2)/impl8". VHDL-1504
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/lcdrgb.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/lcdrgb.vhd(7): analyzing entity lcdrgb. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/lcdrgb.vhd(31): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/lcd_ram.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(7): analyzing entity lcd_ram. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(26): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/adc_voltmeter_top.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/adc_voltmeter_top.vhd(7): analyzing entity adc_voltmeter_top. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/adc_voltmeter_top.vhd(31): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/bcd.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/bcd.vhd(6): analyzing entity bcd. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/bcd.vhd(18): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/lab8_74hc595.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/lab8_74hc595.vhd(6): analyzing entity lab8_74hc595. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/lab8_74hc595.vhd(26): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/lab8_i2c.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/lab8_i2c.vhd(6): analyzing entity lab8_i2c. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/lab8_i2c.vhd(20): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+Analyzing VHDL file c:/users/admin/desktop/lab8(2)/lab8_voltage.vhd. VHDL-1481
+INFO - c:/users/admin/desktop/lab8(2)/lab8_voltage.vhd(6): analyzing entity lab8_voltage. VHDL-1012
+INFO - c:/users/admin/desktop/lab8(2)/lab8_voltage.vhd(28): analyzing architecture arch. VHDL-1010
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+unit ADC_voltmeter_top is not yet analyzed. VHDL-1485
+c:/users/admin/desktop/lab8(2)/adc_voltmeter_top.vhd(7): executing ADC_voltmeter_top(arch)
+
+WARNING - c:/users/admin/desktop/lab8(2)/adc_voltmeter_top.vhd(29): replacing existing netlist ADC_voltmeter_top(arch). VHDL-1205
+Top module name (VHDL): ADC_voltmeter_top
+Last elaborated design is ADC_voltmeter_top(arch)
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Top-level module name = ADC_voltmeter_top.
+WARNING - Initial value found on net lcd_bl_out will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcd_clk_out will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcd_rst_n_out will be ignored due to unrecognized driver type
+WARNING - Initial value found on net pwr will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[11] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[10] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[9] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[8] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[7] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[6] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[5] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[4] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[3] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[2] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[1] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net bcd_out[0] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[19] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[18] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[17] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[16] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[15] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[14] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[13] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[12] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[11] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[10] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[9] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[8] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[7] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[6] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[5] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[4] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[3] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[2] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[1] will be ignored due to unrecognized driver type
+WARNING - Initial value found on net lcdbcd[0] will be ignored due to unrecognized driver type
+
+
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i1 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i2 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i3 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i4 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i5 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i6 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i7 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i8 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i9 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i10 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i11 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i12 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i13 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i14 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i15 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i16 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Transparent Latch \SUB1/data1_out_0__I_0_i17 gate is stuck at One
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Latch \SUB1/data5_out_0__I_0_i17 input is stuck at Zero
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Latch \SUB1/data6_out_0__I_0_i17 input is stuck at Zero
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Latch \SUB1/data4_out_0__I_0_i17 input is stuck at Zero
+
+WARNING - c:/users/admin/desktop/lab8(2)/lcd_ram.vhd(112): Latch \SUB1/data3_out_0__I_0_i17 input is stuck at Zero
+
+WARNING - Bit 0 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 1 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 2 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 3 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 4 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 5 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 6 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 7 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 8 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 9 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 10 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 11 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 12 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 13 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 14 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 15 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 16 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 17 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 18 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 19 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 20 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 21 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 22 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 23 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 24 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 25 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - Bit 26 of Register \SUB2/data_sequence is stuck at Zero
+WARNING - c:/users/admin/desktop/lab8(2)/lcdrgb.vhd(581): Register \SUB2/num1_i179 is stuck at Zero. VDB-5013
+WARNING - c:/users/admin/desktop/lab8(2)/lcdrgb.vhd(581): Register \SUB2/num1_i165 is stuck at One. VDB-5014
+WARNING - c:/users/admin/desktop/lab8(2)/lab8_i2c.vhd(184): Register \I2C/cnt_c_i3 is stuck at Zero. VDB-5013
+GSR instance connected to net rst_in_c.
+Duplicate register/latch removal. \SUB2/num1_i164 is a one-to-one match with \SUB2/num1_i163.
+Duplicate register/latch removal. \SUB2/num1_i162 is a one-to-one match with \SUB2/num1_i164.
+Duplicate register/latch removal. \SUB2/num1_i161 is a one-to-one match with \SUB2/num1_i162.
+Duplicate register/latch removal. \SUB2/num1_i160 is a one-to-one match with \SUB2/num1_i161.
+Duplicate register/latch removal. \SUB2/num1_i159 is a one-to-one match with \SUB2/num1_i160.
+Duplicate register/latch removal. \SUB2/num1_i158 is a one-to-one match with \SUB2/num1_i159.
+Duplicate register/latch removal. \SUB2/num1_i151 is a one-to-one match with \SUB2/num1_i158.
+Duplicate register/latch removal. \SUB2/num1_i150 is a one-to-one match with \SUB2/num1_i151.
+Duplicate register/latch removal. \SUB2/num1_i149 is a one-to-one match with \SUB2/num1_i150.
+Duplicate register/latch removal. \SUB2/num1_i148 is a one-to-one match with \SUB2/num1_i149.
+Duplicate register/latch removal. \SUB2/num1_i147 is a one-to-one match with \SUB2/num1_i148.
+Duplicate register/latch removal. \SUB2/num1_i146 is a one-to-one match with \SUB2/num1_i147.
+Duplicate register/latch removal. \SUB2/num1_i145 is a one-to-one match with \SUB2/num1_i146.
+Duplicate register/latch removal. \SUB2/num1_i142 is a one-to-one match with \SUB2/num1_i141.
+Duplicate register/latch removal. \SUB2/num1_i140 is a one-to-one match with \SUB2/num1_i142.
+Duplicate register/latch removal. \SUB2/num1_i135 is a one-to-one match with \SUB2/num1_i134.
+Duplicate register/latch removal. \SUB2/num1_i133 is a one-to-one match with \SUB2/num1_i135.
+Duplicate register/latch removal. \SUB2/num1_i130 is a one-to-one match with \SUB2/num1_i140.
+Duplicate register/latch removal. \SUB2/num1_i129 is a one-to-one match with \SUB2/num1_i130.
+Duplicate register/latch removal. \SUB2/num1_i128 is a one-to-one match with \SUB2/num1_i129.
+Duplicate register/latch removal. \SUB2/num1_i123 is a one-to-one match with \SUB2/num1_i133.
+Duplicate register/latch removal. \SUB2/num1_i122 is a one-to-one match with \SUB2/num1_i123.
+Duplicate register/latch removal. \SUB2/num1_i121 is a one-to-one match with \SUB2/num1_i122.
+Duplicate register/latch removal. \SUB2/num1_i118 is a one-to-one match with \SUB2/num1_i128.
+Duplicate register/latch removal. \SUB2/num1_i117 is a one-to-one match with \SUB2/num1_i118.
+Duplicate register/latch removal. \SUB2/num1_i116 is a one-to-one match with \SUB2/num1_i117.
+Duplicate register/latch removal. \SUB2/num1_i111 is a one-to-one match with \SUB2/num1_i121.
+Duplicate register/latch removal. \SUB2/num1_i110 is a one-to-one match with \SUB2/num1_i111.
+Duplicate register/latch removal. \SUB2/num1_i109 is a one-to-one match with \SUB2/num1_i110.
+Duplicate register/latch removal. \SUB2/num1_i106 is a one-to-one match with \SUB2/num1_i116.
+Duplicate register/latch removal. \SUB2/num1_i105 is a one-to-one match with \SUB2/num1_i106.
+Duplicate register/latch removal. \SUB2/num1_i104 is a one-to-one match with \SUB2/num1_i105.
+Duplicate register/latch removal. \SUB2/num1_i103 is a one-to-one match with \SUB2/num1_i102.
+Duplicate register/latch removal. \SUB2/num1_i101 is a one-to-one match with \SUB2/num1_i103.
+Duplicate register/latch removal. \SUB2/num1_i100 is a one-to-one match with \SUB2/num1_i101.
+Duplicate register/latch removal. \SUB2/num1_i99 is a one-to-one match with \SUB2/num1_i145.
+Duplicate register/latch removal. \SUB2/num1_i98 is a one-to-one match with \SUB2/num1_i109.
+Duplicate register/latch removal. \SUB2/num1_i97 is a one-to-one match with \SUB2/num1_i98.
+Duplicate register/latch removal. \SUB2/num1_i91 is a one-to-one match with \SUB2/num1_i100.
+Duplicate register/latch removal. \SUB2/num1_i90 is a one-to-one match with \SUB2/num1_i91.
+Duplicate register/latch removal. \SUB2/num1_i89 is a one-to-one match with \SUB2/num1_i90.
+Duplicate register/latch removal. \SUB2/num1_i88 is a one-to-one match with \SUB2/num1_i89.
+Duplicate register/latch removal. \SUB2/num1_i87 is a one-to-one match with \SUB2/num1_i88.
+Duplicate register/latch removal. \SUB2/num1_i86 is a one-to-one match with \SUB2/num1_i99.
+Duplicate register/latch removal. \SUB2/num1_i79 is a one-to-one match with \SUB2/num1_i87.
+Duplicate register/latch removal. \SUB2/num1_i78 is a one-to-one match with \SUB2/num1_i79.
+Duplicate register/latch removal. \SUB2/num1_i77 is a one-to-one match with \SUB2/num1_i78.
+Duplicate register/latch removal. \SUB2/num1_i76 is a one-to-one match with \SUB2/num1_i77.
+Duplicate register/latch removal. \SUB2/num1_i75 is a one-to-one match with \SUB2/num1_i86.
+Duplicate register/latch removal. \SUB2/num1_i74 is a one-to-one match with \SUB2/num1_i73.
+Duplicate register/latch removal. \SUB2/num1_i63 is a one-to-one match with \SUB2/num1_i74.
+Duplicate register/latch removal. \SUB2/num1_i62 is a one-to-one match with \SUB2/num1_i63.
+Duplicate register/latch removal. \SUB2/num1_i61 is a one-to-one match with \SUB2/num1_i62.
+Duplicate register/latch removal. \SUB2/num1_i51 is a one-to-one match with \SUB2/num1_i61.
+Duplicate register/latch removal. \SUB2/num1_i50 is a one-to-one match with \SUB2/num1_i51.
+Duplicate register/latch removal. \SUB2/num1_i49 is a one-to-one match with \SUB2/num1_i50.
+Duplicate register/latch removal. \SUB2/num1_i39 is a one-to-one match with \SUB2/num1_i49.
+Duplicate register/latch removal. \SUB2/num1_i38 is a one-to-one match with \SUB2/num1_i39.
+Duplicate register/latch removal. \SUB2/num1_i37 is a one-to-one match with \SUB2/num1_i38.
+Duplicate register/latch removal. \SUB2/num1_i31 is a one-to-one match with \SUB2/num1_i75.
+Duplicate register/latch removal. \SUB2/num1_i30 is a one-to-one match with \SUB2/num1_i31.
+Duplicate register/latch removal. \SUB2/num1_i29 is a one-to-one match with \SUB2/num1_i30.
+Duplicate register/latch removal. \SUB2/num1_i28 is a one-to-one match with \SUB2/num1_i29.
+Duplicate register/latch removal. \SUB2/num1_i27 is a one-to-one match with \SUB2/num1_i28.
+Duplicate register/latch removal. \SUB2/num1_i26 is a one-to-one match with \SUB2/num1_i27.
+Duplicate register/latch removal. \SUB2/num1_i25 is a one-to-one match with \SUB2/num1_i26.
+Duplicate register/latch removal. \SUB2/num1_i20 is a one-to-one match with \SUB2/num1_i25.
+Duplicate register/latch removal. \SUB2/num1_i19 is a one-to-one match with \SUB2/num1_i20.
+Duplicate register/latch removal. \SUB2/num1_i18 is a one-to-one match with \SUB2/num1_i19.
+Duplicate register/latch removal. \SUB2/num1_i17 is a one-to-one match with \SUB2/num1_i18.
+Duplicate register/latch removal. \SUB2/num1_i16 is a one-to-one match with \SUB2/num1_i17.
+Duplicate register/latch removal. \SUB2/num1_i15 is a one-to-one match with \SUB2/num1_i16.
+Duplicate register/latch removal. \SUB2/num1_i14 is a one-to-one match with \SUB2/num1_i15.
+Duplicate register/latch removal. \SUB2/num3_i165 is a one-to-one match with \SUB2/num3_i154.
+Duplicate register/latch removal. \SUB2/num3_i164 is a one-to-one match with \SUB2/num3_i163.
+Duplicate register/latch removal. \SUB2/num3_i162 is a one-to-one match with \SUB2/num3_i164.
+Duplicate register/latch removal. \SUB2/num3_i161 is a one-to-one match with \SUB2/num3_i162.
+Duplicate register/latch removal. \SUB2/num3_i160 is a one-to-one match with \SUB2/num3_i161.
+Duplicate register/latch removal. \SUB2/num3_i159 is a one-to-one match with \SUB2/num3_i160.
+Duplicate register/latch removal. \SUB2/num3_i158 is a one-to-one match with \SUB2/num3_i159.
+Duplicate register/latch removal. \SUB2/num3_i153 is a one-to-one match with \SUB2/num3_i165.
+Duplicate register/latch removal. \SUB2/num3_i152 is a one-to-one match with \SUB2/num3_i153.
+Duplicate register/latch removal. \SUB2/num3_i151 is a one-to-one match with \SUB2/num3_i158.
+Duplicate register/latch removal. \SUB2/num3_i150 is a one-to-one match with \SUB2/num3_i151.
+Duplicate register/latch removal. \SUB2/num3_i149 is a one-to-one match with \SUB2/num3_i150.
+Duplicate register/latch removal. \SUB2/num3_i148 is a one-to-one match with \SUB2/num3_i149.
+Duplicate register/latch removal. \SUB2/num3_i147 is a one-to-one match with \SUB2/num3_i146.
+Duplicate register/latch removal. \SUB2/num3_i145 is a one-to-one match with \SUB2/num3_i147.
+Duplicate register/latch removal. \SUB2/num3_i142 is a one-to-one match with \SUB2/num3_i141.
+Duplicate register/latch removal. \SUB2/num3_i140 is a one-to-one match with \SUB2/num3_i142.
+Duplicate register/latch removal. \SUB2/num3_i135 is a one-to-one match with \SUB2/num3_i134.
+Duplicate register/latch removal. \SUB2/num3_i133 is a one-to-one match with \SUB2/num3_i135.
+Duplicate register/latch removal. \SUB2/num3_i130 is a one-to-one match with \SUB2/num3_i140.
+Duplicate register/latch removal. \SUB2/num3_i129 is a one-to-one match with \SUB2/num3_i130.
+Duplicate register/latch removal. \SUB2/num3_i128 is a one-to-one match with \SUB2/num3_i129.
+Duplicate register/latch removal. \SUB2/num3_i123 is a one-to-one match with \SUB2/num3_i133.
+Duplicate register/latch removal. \SUB2/num3_i122 is a one-to-one match with \SUB2/num3_i123.
+Duplicate register/latch removal. \SUB2/num3_i121 is a one-to-one match with \SUB2/num3_i122.
+Duplicate register/latch removal. \SUB2/num3_i118 is a one-to-one match with \SUB2/num3_i128.
+Duplicate register/latch removal. \SUB2/num3_i117 is a one-to-one match with \SUB2/num3_i118.
+Duplicate register/latch removal. \SUB2/num3_i116 is a one-to-one match with \SUB2/num3_i117.
+Duplicate register/latch removal. \SUB2/num3_i111 is a one-to-one match with \SUB2/num3_i121.
+Duplicate register/latch removal. \SUB2/num3_i110 is a one-to-one match with \SUB2/num3_i111.
+Duplicate register/latch removal. \SUB2/num3_i109 is a one-to-one match with \SUB2/num3_i110.
+Duplicate register/latch removal. \SUB2/num3_i106 is a one-to-one match with \SUB2/num3_i116.
+Duplicate register/latch removal. \SUB2/num3_i105 is a one-to-one match with \SUB2/num3_i106.
+Duplicate register/latch removal. \SUB2/num3_i104 is a one-to-one match with \SUB2/num3_i105.
+Duplicate register/latch removal. \SUB2/num3_i103 is a one-to-one match with \SUB2/num3_i102.
+Duplicate register/latch removal. \SUB2/num3_i101 is a one-to-one match with \SUB2/num3_i103.
+Duplicate register/latch removal. \SUB2/num3_i100 is a one-to-one match with \SUB2/num3_i101.
+Duplicate register/latch removal. \SUB2/num3_i99 is a one-to-one match with \SUB2/num3_i86.
+Duplicate register/latch removal. \SUB2/num3_i98 is a one-to-one match with \SUB2/num3_i109.
+Duplicate register/latch removal. \SUB2/num3_i97 is a one-to-one match with \SUB2/num3_i98.
+Duplicate register/latch removal. \SUB2/num3_i93 is a one-to-one match with \SUB2/num3_i152.
+Duplicate register/latch removal. \SUB2/num3_i90 is a one-to-one match with \SUB2/num3_i100.
+Duplicate register/latch removal. \SUB2/num3_i89 is a one-to-one match with \SUB2/num3_i90.
+Duplicate register/latch removal. \SUB2/num3_i88 is a one-to-one match with \SUB2/num3_i89.
+Duplicate register/latch removal. \SUB2/num3_i82 is a one-to-one match with \SUB2/num3_i81.
+Duplicate register/latch removal. \SUB2/num3_i79 is a one-to-one match with \SUB2/num3_i88.
+Duplicate register/latch removal. \SUB2/num3_i78 is a one-to-one match with \SUB2/num3_i79.
+Duplicate register/latch removal. \SUB2/num3_i77 is a one-to-one match with \SUB2/num3_i78.
+Duplicate register/latch removal. \SUB2/num3_i76 is a one-to-one match with \SUB2/num3_i77.
+Duplicate register/latch removal. \SUB2/num3_i74 is a one-to-one match with \SUB2/num3_i73.
+Duplicate register/latch removal. \SUB2/num3_i70 is a one-to-one match with \SUB2/num3_i82.
+Duplicate register/latch removal. \SUB2/num3_i69 is a one-to-one match with \SUB2/num3_i70.
+Duplicate register/latch removal. \SUB2/num3_i68 is a one-to-one match with \SUB2/num3_i69.
+Duplicate register/latch removal. \SUB2/num3_i63 is a one-to-one match with \SUB2/num3_i74.
+Duplicate register/latch removal. \SUB2/num3_i62 is a one-to-one match with \SUB2/num3_i63.
+Duplicate register/latch removal. \SUB2/num3_i61 is a one-to-one match with \SUB2/num3_i62.
+Duplicate register/latch removal. \SUB2/num3_i58 is a one-to-one match with \SUB2/num3_i68.
+Duplicate register/latch removal. \SUB2/num3_i57 is a one-to-one match with \SUB2/num3_i58.
+Duplicate register/latch removal. \SUB2/num3_i56 is a one-to-one match with \SUB2/num3_i57.
+Duplicate register/latch removal. \SUB2/num3_i51 is a one-to-one match with \SUB2/num3_i61.
+Duplicate register/latch removal. \SUB2/num3_i50 is a one-to-one match with \SUB2/num3_i51.
+Duplicate register/latch removal. \SUB2/num3_i49 is a one-to-one match with \SUB2/num3_i50.
+Duplicate register/latch removal. \SUB2/num3_i46 is a one-to-one match with \SUB2/num3_i56.
+Duplicate register/latch removal. \SUB2/num3_i45 is a one-to-one match with \SUB2/num3_i46.
+Duplicate register/latch removal. \SUB2/num3_i44 is a one-to-one match with \SUB2/num3_i45.
+Duplicate register/latch removal. \SUB2/num3_i39 is a one-to-one match with \SUB2/num3_i49.
+Duplicate register/latch removal. \SUB2/num3_i38 is a one-to-one match with \SUB2/num3_i39.
+Duplicate register/latch removal. \SUB2/num3_i37 is a one-to-one match with \SUB2/num3_i38.
+Duplicate register/latch removal. \SUB2/num3_i34 is a one-to-one match with \SUB2/num3_i93.
+Duplicate register/latch removal. \SUB2/num3_i33 is a one-to-one match with \SUB2/num3_i34.
+Duplicate register/latch removal. \SUB2/num3_i32 is a one-to-one match with \SUB2/num3_i33.
+Duplicate register/latch removal. \SUB2/num3_i31 is a one-to-one match with \SUB2/num3_i30.
+Duplicate register/latch removal. \SUB2/num3_i29 is a one-to-one match with \SUB2/num3_i31.
+Duplicate register/latch removal. \SUB2/num3_i28 is a one-to-one match with \SUB2/num3_i29.
+Duplicate register/latch removal. \SUB2/num3_i27 is a one-to-one match with \SUB2/num3_i26.
+Duplicate register/latch removal. \SUB2/num3_i25 is a one-to-one match with \SUB2/num3_i27.
+Duplicate register/latch removal. \SUB2/num3_i21 is a one-to-one match with \SUB2/num3_i32.
+Duplicate register/latch removal. \SUB2/num3_i20 is a one-to-one match with \SUB2/num3_i28.
+Duplicate register/latch removal. \SUB2/num3_i19 is a one-to-one match with \SUB2/num3_i20.
+Duplicate register/latch removal. \SUB2/num3_i18 is a one-to-one match with \SUB2/num3_i19.
+Duplicate register/latch removal. \SUB2/num3_i17 is a one-to-one match with \SUB2/num3_i18.
+Duplicate register/latch removal. \SUB2/num3_i16 is a one-to-one match with \SUB2/num3_i17.
+Duplicate register/latch removal. \SUB2/num3_i15 is a one-to-one match with \SUB2/num3_i16.
+Duplicate register/latch removal. \SUB2/num3_i14 is a one-to-one match with \SUB2/num3_i25.
+Duplicate register/latch removal. \SUB2/num4_i165 is a one-to-one match with \SUB2/num4_i154.
+Duplicate register/latch removal. \SUB2/num4_i164 is a one-to-one match with \SUB2/num4_i163.
+Duplicate register/latch removal. \SUB2/num4_i162 is a one-to-one match with \SUB2/num4_i164.
+Duplicate register/latch removal. \SUB2/num4_i161 is a one-to-one match with \SUB2/num4_i162.
+Duplicate register/latch removal. \SUB2/num4_i160 is a one-to-one match with \SUB2/num4_i161.
+Duplicate register/latch removal. \SUB2/num4_i159 is a one-to-one match with \SUB2/num4_i160.
+Duplicate register/latch removal. \SUB2/num4_i158 is a one-to-one match with \SUB2/num4_i159.
+Duplicate register/latch removal. \SUB2/num4_i153 is a one-to-one match with \SUB2/num4_i165.
+Duplicate register/latch removal. \SUB2/num4_i152 is a one-to-one match with \SUB2/num4_i153.
+Duplicate register/latch removal. \SUB2/num4_i151 is a one-to-one match with \SUB2/num4_i158.
+Duplicate register/latch removal. \SUB2/num4_i150 is a one-to-one match with \SUB2/num4_i151.
+Duplicate register/latch removal. \SUB2/num4_i149 is a one-to-one match with \SUB2/num4_i150.
+Duplicate register/latch removal. \SUB2/num4_i148 is a one-to-one match with \SUB2/num4_i149.
+Duplicate register/latch removal. \SUB2/num4_i147 is a one-to-one match with \SUB2/num4_i146.
+Duplicate register/latch removal. \SUB2/num4_i145 is a one-to-one match with \SUB2/num4_i147.
+Duplicate register/latch removal. \SUB2/num4_i142 is a one-to-one match with \SUB2/num4_i141.
+Duplicate register/latch removal. \SUB2/num4_i140 is a one-to-one match with \SUB2/num4_i142.
+Duplicate register/latch removal. \SUB2/num4_i135 is a one-to-one match with \SUB2/num4_i134.
+Duplicate register/latch removal. \SUB2/num4_i133 is a one-to-one match with \SUB2/num4_i135.
+Duplicate register/latch removal. \SUB2/num4_i130 is a one-to-one match with \SUB2/num4_i140.
+Duplicate register/latch removal. \SUB2/num4_i129 is a one-to-one match with \SUB2/num4_i130.
+Duplicate register/latch removal. \SUB2/num4_i128 is a one-to-one match with \SUB2/num4_i129.
+Duplicate register/latch removal. \SUB2/num4_i123 is a one-to-one match with \SUB2/num4_i133.
+Duplicate register/latch removal. \SUB2/num4_i122 is a one-to-one match with \SUB2/num4_i123.
+Duplicate register/latch removal. \SUB2/num4_i121 is a one-to-one match with \SUB2/num4_i122.
+Duplicate register/latch removal. \SUB2/num4_i118 is a one-to-one match with \SUB2/num4_i128.
+Duplicate register/latch removal. \SUB2/num4_i117 is a one-to-one match with \SUB2/num4_i118.
+Duplicate register/latch removal. \SUB2/num4_i116 is a one-to-one match with \SUB2/num4_i117.
+Duplicate register/latch removal. \SUB2/num4_i111 is a one-to-one match with \SUB2/num4_i121.
+Duplicate register/latch removal. \SUB2/num4_i110 is a one-to-one match with \SUB2/num4_i111.
+Duplicate register/latch removal. \SUB2/num4_i109 is a one-to-one match with \SUB2/num4_i110.
+Duplicate register/latch removal. \SUB2/num4_i106 is a one-to-one match with \SUB2/num4_i116.
+Duplicate register/latch removal. \SUB2/num4_i105 is a one-to-one match with \SUB2/num4_i106.
+Duplicate register/latch removal. \SUB2/num4_i104 is a one-to-one match with \SUB2/num4_i105.
+Duplicate register/latch removal. \SUB2/num4_i103 is a one-to-one match with \SUB2/num4_i102.
+Duplicate register/latch removal. \SUB2/num4_i101 is a one-to-one match with \SUB2/num4_i103.
+Duplicate register/latch removal. \SUB2/num4_i100 is a one-to-one match with \SUB2/num4_i101.
+Duplicate register/latch removal. \SUB2/num4_i99 is a one-to-one match with \SUB2/num4_i86.
+Duplicate register/latch removal. \SUB2/num4_i98 is a one-to-one match with \SUB2/num4_i109.
+Duplicate register/latch removal. \SUB2/num4_i97 is a one-to-one match with \SUB2/num4_i98.
+Duplicate register/latch removal. \SUB2/num4_i93 is a one-to-one match with \SUB2/num4_i152.
+Duplicate register/latch removal. \SUB2/num4_i90 is a one-to-one match with \SUB2/num4_i100.
+Duplicate register/latch removal. \SUB2/num4_i89 is a one-to-one match with \SUB2/num4_i90.
+Duplicate register/latch removal. \SUB2/num4_i88 is a one-to-one match with \SUB2/num4_i89.
+Duplicate register/latch removal. \SUB2/num4_i82 is a one-to-one match with \SUB2/num4_i81.
+Duplicate register/latch removal. \SUB2/num4_i79 is a one-to-one match with \SUB2/num4_i88.
+Duplicate register/latch removal. \SUB2/num4_i78 is a one-to-one match with \SUB2/num4_i79.
+Duplicate register/latch removal. \SUB2/num4_i77 is a one-to-one match with \SUB2/num4_i78.
+Duplicate register/latch removal. \SUB2/num4_i76 is a one-to-one match with \SUB2/num4_i77.
+Duplicate register/latch removal. \SUB2/num4_i74 is a one-to-one match with \SUB2/num4_i73.
+Duplicate register/latch removal. \SUB2/num4_i70 is a one-to-one match with \SUB2/num4_i82.
+Duplicate register/latch removal. \SUB2/num4_i69 is a one-to-one match with \SUB2/num4_i70.
+Duplicate register/latch removal. \SUB2/num4_i68 is a one-to-one match with \SUB2/num4_i69.
+Duplicate register/latch removal. \SUB2/num4_i63 is a one-to-one match with \SUB2/num4_i74.
+Duplicate register/latch removal. \SUB2/num4_i62 is a one-to-one match with \SUB2/num4_i63.
+Duplicate register/latch removal. \SUB2/num4_i61 is a one-to-one match with \SUB2/num4_i62.
+Duplicate register/latch removal. \SUB2/num4_i58 is a one-to-one match with \SUB2/num4_i68.
+Duplicate register/latch removal. \SUB2/num4_i57 is a one-to-one match with \SUB2/num4_i58.
+Duplicate register/latch removal. \SUB2/num4_i56 is a one-to-one match with \SUB2/num4_i57.
+Duplicate register/latch removal. \SUB2/num4_i51 is a one-to-one match with \SUB2/num4_i61.
+Duplicate register/latch removal. \SUB2/num4_i50 is a one-to-one match with \SUB2/num4_i51.
+Duplicate register/latch removal. \SUB2/num4_i49 is a one-to-one match with \SUB2/num4_i50.
+Duplicate register/latch removal. \SUB2/num4_i46 is a one-to-one match with \SUB2/num4_i56.
+Duplicate register/latch removal. \SUB2/num4_i45 is a one-to-one match with \SUB2/num4_i46.
+Duplicate register/latch removal. \SUB2/num4_i44 is a one-to-one match with \SUB2/num4_i45.
+Duplicate register/latch removal. \SUB2/num4_i39 is a one-to-one match with \SUB2/num4_i49.
+Duplicate register/latch removal. \SUB2/num4_i38 is a one-to-one match with \SUB2/num4_i39.
+Duplicate register/latch removal. \SUB2/num4_i37 is a one-to-one match with \SUB2/num4_i38.
+Duplicate register/latch removal. \SUB2/num4_i34 is a one-to-one match with \SUB2/num4_i93.
+Duplicate register/latch removal. \SUB2/num4_i33 is a one-to-one match with \SUB2/num4_i34.
+Duplicate register/latch removal. \SUB2/num4_i32 is a one-to-one match with \SUB2/num4_i33.
+Duplicate register/latch removal. \SUB2/num4_i31 is a one-to-one match with \SUB2/num4_i30.
+Duplicate register/latch removal. \SUB2/num4_i29 is a one-to-one match with \SUB2/num4_i31.
+Duplicate register/latch removal. \SUB2/num4_i28 is a one-to-one match with \SUB2/num4_i29.
+Duplicate register/latch removal. \SUB2/num4_i27 is a one-to-one match with \SUB2/num4_i26.
+Duplicate register/latch removal. \SUB2/num4_i25 is a one-to-one match with \SUB2/num4_i27.
+Duplicate register/latch removal. \SUB2/num4_i21 is a one-to-one match with \SUB2/num4_i32.
+Duplicate register/latch removal. \SUB2/num4_i20 is a one-to-one match with \SUB2/num4_i28.
+Duplicate register/latch removal. \SUB2/num4_i19 is a one-to-one match with \SUB2/num4_i20.
+Duplicate register/latch removal. \SUB2/num4_i18 is a one-to-one match with \SUB2/num4_i19.
+Duplicate register/latch removal. \SUB2/num4_i17 is a one-to-one match with \SUB2/num4_i18.
+Duplicate register/latch removal. \SUB2/num4_i16 is a one-to-one match with \SUB2/num4_i17.
+Duplicate register/latch removal. \SUB2/num4_i15 is a one-to-one match with \SUB2/num4_i16.
+Duplicate register/latch removal. \SUB2/num4_i14 is a one-to-one match with \SUB2/num4_i25.
+Duplicate register/latch removal. \SUB2/num5_i165 is a one-to-one match with \SUB2/num5_i154.
+Duplicate register/latch removal. \SUB2/num5_i164 is a one-to-one match with \SUB2/num5_i163.
+Duplicate register/latch removal. \SUB2/num5_i162 is a one-to-one match with \SUB2/num5_i164.
+Duplicate register/latch removal. \SUB2/num5_i161 is a one-to-one match with \SUB2/num5_i162.
+Duplicate register/latch removal. \SUB2/num5_i160 is a one-to-one match with \SUB2/num5_i161.
+Duplicate register/latch removal. \SUB2/num5_i159 is a one-to-one match with \SUB2/num5_i160.
+Duplicate register/latch removal. \SUB2/num5_i158 is a one-to-one match with \SUB2/num5_i159.
+Duplicate register/latch removal. \SUB2/num5_i153 is a one-to-one match with \SUB2/num5_i165.
+Duplicate register/latch removal. \SUB2/num5_i152 is a one-to-one match with \SUB2/num5_i153.
+Duplicate register/latch removal. \SUB2/num5_i151 is a one-to-one match with \SUB2/num5_i158.
+Duplicate register/latch removal. \SUB2/num5_i150 is a one-to-one match with \SUB2/num5_i151.
+Duplicate register/latch removal. \SUB2/num5_i149 is a one-to-one match with \SUB2/num5_i150.
+Duplicate register/latch removal. \SUB2/num5_i148 is a one-to-one match with \SUB2/num5_i149.
+Duplicate register/latch removal. \SUB2/num5_i147 is a one-to-one match with \SUB2/num5_i146.
+Duplicate register/latch removal. \SUB2/num5_i145 is a one-to-one match with \SUB2/num5_i147.
+Duplicate register/latch removal. \SUB2/num5_i142 is a one-to-one match with \SUB2/num5_i141.
+Duplicate register/latch removal. \SUB2/num5_i140 is a one-to-one match with \SUB2/num5_i142.
+Duplicate register/latch removal. \SUB2/num5_i135 is a one-to-one match with \SUB2/num5_i134.
+Duplicate register/latch removal. \SUB2/num5_i133 is a one-to-one match with \SUB2/num5_i135.
+Duplicate register/latch removal. \SUB2/num5_i130 is a one-to-one match with \SUB2/num5_i140.
+Duplicate register/latch removal. \SUB2/num5_i129 is a one-to-one match with \SUB2/num5_i130.
+Duplicate register/latch removal. \SUB2/num5_i128 is a one-to-one match with \SUB2/num5_i129.
+Duplicate register/latch removal. \SUB2/num5_i123 is a one-to-one match with \SUB2/num5_i133.
+Duplicate register/latch removal. \SUB2/num5_i122 is a one-to-one match with \SUB2/num5_i123.
+Duplicate register/latch removal. \SUB2/num5_i121 is a one-to-one match with \SUB2/num5_i122.
+Duplicate register/latch removal. \SUB2/num5_i118 is a one-to-one match with \SUB2/num5_i128.
+Duplicate register/latch removal. \SUB2/num5_i117 is a one-to-one match with \SUB2/num5_i118.
+Duplicate register/latch removal. \SUB2/num5_i116 is a one-to-one match with \SUB2/num5_i117.
+Duplicate register/latch removal. \SUB2/num5_i111 is a one-to-one match with \SUB2/num5_i121.
+Duplicate register/latch removal. \SUB2/num5_i110 is a one-to-one match with \SUB2/num5_i111.
+Duplicate register/latch removal. \SUB2/num5_i109 is a one-to-one match with \SUB2/num5_i110.
+Duplicate register/latch removal. \SUB2/num5_i106 is a one-to-one match with \SUB2/num5_i116.
+Duplicate register/latch removal. \SUB2/num5_i105 is a one-to-one match with \SUB2/num5_i106.
+Duplicate register/latch removal. \SUB2/num5_i104 is a one-to-one match with \SUB2/num5_i105.
+Duplicate register/latch removal. \SUB2/num5_i103 is a one-to-one match with \SUB2/num5_i102.
+Duplicate register/latch removal. \SUB2/num5_i101 is a one-to-one match with \SUB2/num5_i103.
+Duplicate register/latch removal. \SUB2/num5_i100 is a one-to-one match with \SUB2/num5_i101.
+Duplicate register/latch removal. \SUB2/num5_i99 is a one-to-one match with \SUB2/num5_i86.
+Duplicate register/latch removal. \SUB2/num5_i98 is a one-to-one match with \SUB2/num5_i109.
+Duplicate register/latch removal. \SUB2/num5_i97 is a one-to-one match with \SUB2/num5_i98.
+Duplicate register/latch removal. \SUB2/num5_i93 is a one-to-one match with \SUB2/num5_i152.
+Duplicate register/latch removal. \SUB2/num5_i90 is a one-to-one match with \SUB2/num5_i100.
+Duplicate register/latch removal. \SUB2/num5_i89 is a one-to-one match with \SUB2/num5_i90.
+Duplicate register/latch removal. \SUB2/num5_i88 is a one-to-one match with \SUB2/num5_i89.
+Duplicate register/latch removal. \SUB2/num5_i82 is a one-to-one match with \SUB2/num5_i81.
+Duplicate register/latch removal. \SUB2/num5_i79 is a one-to-one match with \SUB2/num5_i88.
+Duplicate register/latch removal. \SUB2/num5_i78 is a one-to-one match with \SUB2/num5_i79.
+Duplicate register/latch removal. \SUB2/num5_i77 is a one-to-one match with \SUB2/num5_i78.
+Duplicate register/latch removal. \SUB2/num5_i76 is a one-to-one match with \SUB2/num5_i77.
+Duplicate register/latch removal. \SUB2/num5_i74 is a one-to-one match with \SUB2/num5_i73.
+Duplicate register/latch removal. \SUB2/num5_i70 is a one-to-one match with \SUB2/num5_i82.
+Duplicate register/latch removal. \SUB2/num5_i69 is a one-to-one match with \SUB2/num5_i70.
+Duplicate register/latch removal. \SUB2/num5_i68 is a one-to-one match with \SUB2/num5_i69.
+Duplicate register/latch removal. \SUB2/num5_i63 is a one-to-one match with \SUB2/num5_i74.
+Duplicate register/latch removal. \SUB2/num5_i62 is a one-to-one match with \SUB2/num5_i63.
+Duplicate register/latch removal. \SUB2/num5_i61 is a one-to-one match with \SUB2/num5_i62.
+Duplicate register/latch removal. \SUB2/num5_i58 is a one-to-one match with \SUB2/num5_i68.
+Duplicate register/latch removal. \SUB2/num5_i57 is a one-to-one match with \SUB2/num5_i58.
+Duplicate register/latch removal. \SUB2/num5_i56 is a one-to-one match with \SUB2/num5_i57.
+Duplicate register/latch removal. \SUB2/num5_i51 is a one-to-one match with \SUB2/num5_i61.
+Duplicate register/latch removal. \SUB2/num5_i50 is a one-to-one match with \SUB2/num5_i51.
+Duplicate register/latch removal. \SUB2/num5_i49 is a one-to-one match with \SUB2/num5_i50.
+Duplicate register/latch removal. \SUB2/num5_i46 is a one-to-one match with \SUB2/num5_i56.
+Duplicate register/latch removal. \SUB2/num5_i45 is a one-to-one match with \SUB2/num5_i46.
+Duplicate register/latch removal. \SUB2/num5_i44 is a one-to-one match with \SUB2/num5_i45.
+Duplicate register/latch removal. \SUB2/num5_i39 is a one-to-one match with \SUB2/num5_i49.
+Duplicate register/latch removal. \SUB2/num5_i38 is a one-to-one match with \SUB2/num5_i39.
+Duplicate register/latch removal. \SUB2/num5_i37 is a one-to-one match with \SUB2/num5_i38.
+Duplicate register/latch removal. \SUB2/num5_i34 is a one-to-one match with \SUB2/num5_i93.
+Duplicate register/latch removal. \SUB2/num5_i33 is a one-to-one match with \SUB2/num5_i34.
+Duplicate register/latch removal. \SUB2/num5_i32 is a one-to-one match with \SUB2/num5_i33.
+Duplicate register/latch removal. \SUB2/num5_i31 is a one-to-one match with \SUB2/num5_i30.
+Duplicate register/latch removal. \SUB2/num5_i29 is a one-to-one match with \SUB2/num5_i31.
+Duplicate register/latch removal. \SUB2/num5_i28 is a one-to-one match with \SUB2/num5_i29.
+Duplicate register/latch removal. \SUB2/num5_i27 is a one-to-one match with \SUB2/num5_i26.
+Duplicate register/latch removal. \SUB2/num5_i25 is a one-to-one match with \SUB2/num5_i27.
+Duplicate register/latch removal. \SUB2/num5_i21 is a one-to-one match with \SUB2/num5_i32.
+Duplicate register/latch removal. \SUB2/num5_i20 is a one-to-one match with \SUB2/num5_i28.
+Duplicate register/latch removal. \SUB2/num5_i19 is a one-to-one match with \SUB2/num5_i20.
+Duplicate register/latch removal. \SUB2/num5_i18 is a one-to-one match with \SUB2/num5_i19.
+Duplicate register/latch removal. \SUB2/num5_i17 is a one-to-one match with \SUB2/num5_i18.
+Duplicate register/latch removal. \SUB2/num5_i16 is a one-to-one match with \SUB2/num5_i17.
+Duplicate register/latch removal. \SUB2/num5_i15 is a one-to-one match with \SUB2/num5_i16.
+Duplicate register/latch removal. \SUB2/num5_i14 is a one-to-one match with \SUB2/num5_i25.
+Duplicate register/latch removal. \SUB2/num6_i165 is a one-to-one match with \SUB2/num6_i154.
+Duplicate register/latch removal. \SUB2/num6_i164 is a one-to-one match with \SUB2/num6_i163.
+Duplicate register/latch removal. \SUB2/num6_i162 is a one-to-one match with \SUB2/num6_i164.
+Duplicate register/latch removal. \SUB2/num6_i161 is a one-to-one match with \SUB2/num6_i162.
+Duplicate register/latch removal. \SUB2/num6_i160 is a one-to-one match with \SUB2/num6_i161.
+Duplicate register/latch removal. \SUB2/num6_i159 is a one-to-one match with \SUB2/num6_i160.
+Duplicate register/latch removal. \SUB2/num6_i158 is a one-to-one match with \SUB2/num6_i159.
+Duplicate register/latch removal. \SUB2/num6_i153 is a one-to-one match with \SUB2/num6_i165.
+Duplicate register/latch removal. \SUB2/num6_i152 is a one-to-one match with \SUB2/num6_i153.
+Duplicate register/latch removal. \SUB2/num6_i151 is a one-to-one match with \SUB2/num6_i158.
+Duplicate register/latch removal. \SUB2/num6_i150 is a one-to-one match with \SUB2/num6_i151.
+Duplicate register/latch removal. \SUB2/num6_i149 is a one-to-one match with \SUB2/num6_i150.
+Duplicate register/latch removal. \SUB2/num6_i148 is a one-to-one match with \SUB2/num6_i149.
+Duplicate register/latch removal. \SUB2/num6_i147 is a one-to-one match with \SUB2/num6_i146.
+Duplicate register/latch removal. \SUB2/num6_i145 is a one-to-one match with \SUB2/num6_i147.
+Duplicate register/latch removal. \SUB2/num6_i142 is a one-to-one match with \SUB2/num6_i141.
+Duplicate register/latch removal. \SUB2/num6_i140 is a one-to-one match with \SUB2/num6_i142.
+Duplicate register/latch removal. \SUB2/num6_i135 is a one-to-one match with \SUB2/num6_i134.
+Duplicate register/latch removal. \SUB2/num6_i133 is a one-to-one match with \SUB2/num6_i135.
+Duplicate register/latch removal. \SUB2/num6_i130 is a one-to-one match with \SUB2/num6_i140.
+Duplicate register/latch removal. \SUB2/num6_i129 is a one-to-one match with \SUB2/num6_i130.
+Duplicate register/latch removal. \SUB2/num6_i128 is a one-to-one match with \SUB2/num6_i129.
+Duplicate register/latch removal. \SUB2/num6_i123 is a one-to-one match with \SUB2/num6_i133.
+Duplicate register/latch removal. \SUB2/num6_i122 is a one-to-one match with \SUB2/num6_i123.
+Duplicate register/latch removal. \SUB2/num6_i121 is a one-to-one match with \SUB2/num6_i122.
+Duplicate register/latch removal. \SUB2/num6_i118 is a one-to-one match with \SUB2/num6_i128.
+Duplicate register/latch removal. \SUB2/num6_i117 is a one-to-one match with \SUB2/num6_i118.
+Duplicate register/latch removal. \SUB2/num6_i116 is a one-to-one match with \SUB2/num6_i117.
+Duplicate register/latch removal. \SUB2/num6_i111 is a one-to-one match with \SUB2/num6_i121.
+Duplicate register/latch removal. \SUB2/num6_i110 is a one-to-one match with \SUB2/num6_i111.
+Duplicate register/latch removal. \SUB2/num6_i109 is a one-to-one match with \SUB2/num6_i110.
+Duplicate register/latch removal. \SUB2/num6_i106 is a one-to-one match with \SUB2/num6_i116.
+Duplicate register/latch removal. \SUB2/num6_i105 is a one-to-one match with \SUB2/num6_i106.
+Duplicate register/latch removal. \SUB2/num6_i104 is a one-to-one match with \SUB2/num6_i105.
+Duplicate register/latch removal. \SUB2/num6_i103 is a one-to-one match with \SUB2/num6_i102.
+Duplicate register/latch removal. \SUB2/num6_i101 is a one-to-one match with \SUB2/num6_i103.
+Duplicate register/latch removal. \SUB2/num6_i100 is a one-to-one match with \SUB2/num6_i101.
+Duplicate register/latch removal. \SUB2/num6_i99 is a one-to-one match with \SUB2/num6_i86.
+Duplicate register/latch removal. \SUB2/num6_i98 is a one-to-one match with \SUB2/num6_i109.
+Duplicate register/latch removal. \SUB2/num6_i97 is a one-to-one match with \SUB2/num6_i98.
+Duplicate register/latch removal. \SUB2/num6_i93 is a one-to-one match with \SUB2/num6_i152.
+Duplicate register/latch removal. \SUB2/num6_i90 is a one-to-one match with \SUB2/num6_i100.
+Duplicate register/latch removal. \SUB2/num6_i89 is a one-to-one match with \SUB2/num6_i90.
+Duplicate register/latch removal. \SUB2/num6_i88 is a one-to-one match with \SUB2/num6_i89.
+Duplicate register/latch removal. \SUB2/num6_i82 is a one-to-one match with \SUB2/num6_i81.
+Duplicate register/latch removal. \SUB2/num6_i79 is a one-to-one match with \SUB2/num6_i88.
+Duplicate register/latch removal. \SUB2/num6_i78 is a one-to-one match with \SUB2/num6_i79.
+Duplicate register/latch removal. \SUB2/num6_i77 is a one-to-one match with \SUB2/num6_i78.
+Duplicate register/latch removal. \SUB2/num6_i76 is a one-to-one match with \SUB2/num6_i77.
+Duplicate register/latch removal. \SUB2/num6_i74 is a one-to-one match with \SUB2/num6_i73.
+Duplicate register/latch removal. \SUB2/num6_i70 is a one-to-one match with \SUB2/num6_i82.
+Duplicate register/latch removal. \SUB2/num6_i69 is a one-to-one match with \SUB2/num6_i70.
+Duplicate register/latch removal. \SUB2/num6_i68 is a one-to-one match with \SUB2/num6_i69.
+Duplicate register/latch removal. \SUB2/num6_i63 is a one-to-one match with \SUB2/num6_i74.
+Duplicate register/latch removal. \SUB2/num6_i62 is a one-to-one match with \SUB2/num6_i63.
+Duplicate register/latch removal. \SUB2/num6_i61 is a one-to-one match with \SUB2/num6_i62.
+Duplicate register/latch removal. \SUB2/num6_i58 is a one-to-one match with \SUB2/num6_i68.
+Duplicate register/latch removal. \SUB2/num6_i57 is a one-to-one match with \SUB2/num6_i58.
+Duplicate register/latch removal. \SUB2/num6_i56 is a one-to-one match with \SUB2/num6_i57.
+Duplicate register/latch removal. \SUB2/num6_i51 is a one-to-one match with \SUB2/num6_i61.
+Duplicate register/latch removal. \SUB2/num6_i50 is a one-to-one match with \SUB2/num6_i51.
+Duplicate register/latch removal. \SUB2/num6_i49 is a one-to-one match with \SUB2/num6_i50.
+Duplicate register/latch removal. \SUB2/num6_i46 is a one-to-one match with \SUB2/num6_i56.
+Duplicate register/latch removal. \SUB2/num6_i45 is a one-to-one match with \SUB2/num6_i46.
+Duplicate register/latch removal. \SUB2/num6_i44 is a one-to-one match with \SUB2/num6_i45.
+Duplicate register/latch removal. \SUB2/num6_i39 is a one-to-one match with \SUB2/num6_i49.
+Duplicate register/latch removal. \SUB2/num6_i38 is a one-to-one match with \SUB2/num6_i39.
+Duplicate register/latch removal. \SUB2/num6_i37 is a one-to-one match with \SUB2/num6_i38.
+Duplicate register/latch removal. \SUB2/num6_i34 is a one-to-one match with \SUB2/num6_i93.
+Duplicate register/latch removal. \SUB2/num6_i33 is a one-to-one match with \SUB2/num6_i34.
+Duplicate register/latch removal. \SUB2/num6_i32 is a one-to-one match with \SUB2/num6_i33.
+Duplicate register/latch removal. \SUB2/num6_i31 is a one-to-one match with \SUB2/num6_i30.
+Duplicate register/latch removal. \SUB2/num6_i29 is a one-to-one match with \SUB2/num6_i31.
+Duplicate register/latch removal. \SUB2/num6_i28 is a one-to-one match with \SUB2/num6_i29.
+Duplicate register/latch removal. \SUB2/num6_i27 is a one-to-one match with \SUB2/num6_i26.
+Duplicate register/latch removal. \SUB2/num6_i25 is a one-to-one match with \SUB2/num6_i27.
+Duplicate register/latch removal. \SUB2/num6_i21 is a one-to-one match with \SUB2/num6_i32.
+Duplicate register/latch removal. \SUB2/num6_i20 is a one-to-one match with \SUB2/num6_i28.
+Duplicate register/latch removal. \SUB2/num6_i19 is a one-to-one match with \SUB2/num6_i20.
+Duplicate register/latch removal. \SUB2/num6_i18 is a one-to-one match with \SUB2/num6_i19.
+Duplicate register/latch removal. \SUB2/num6_i17 is a one-to-one match with \SUB2/num6_i18.
+Duplicate register/latch removal. \SUB2/num6_i16 is a one-to-one match with \SUB2/num6_i17.
+Duplicate register/latch removal. \SUB2/num6_i15 is a one-to-one match with \SUB2/num6_i16.
+Duplicate register/latch removal. \SUB2/num6_i14 is a one-to-one match with \SUB2/num6_i25.
+Duplicate register/latch removal. \SUB1/data5_out_0__I_0_i14 is a one-to-one match with \SUB1/data6_out_0__I_0_i14.
+Duplicate register/latch removal. \SUB1/data4_out_0__I_0_i14 is a one-to-one match with \SUB1/data5_out_0__I_0_i14.
+Duplicate register/latch removal. \SUB1/data3_out_0__I_0_i14 is a one-to-one match with \SUB1/data4_out_0__I_0_i14.
+Duplicate register/latch removal. \SUB2/num3_i21 is a one-to-one match with \SUB2/num6_i21.
+Duplicate register/latch removal. \SUB2/num4_i21 is a one-to-one match with \SUB2/num5_i21.
+Duplicate register/latch removal. \SUB2/num3_i21 is a one-to-one match with \SUB2/num4_i21.
+Applying 200.000000 MHz constraint to all clocks
+
+WARNING - No user .sdc file.
+Results of NGD DRC are available in ADC_voltmeter_top_drc.log.
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.11_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+DRC complete with no errors or warnings
+
+Design Results:
+   3288 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file ADC_voltmeter_impl8.ngd.
+
+################### Begin Area Report (ADC_voltmeter_top)######################
+Number of register bits => 737 of 4635 (15 % )
+BB => 1
+CCU2D => 669
+FD1P3AX => 513
+FD1P3AY => 6
+FD1P3IX => 114
+FD1P3JX => 8
+FD1S1A => 49
+FD1S1I => 12
+FD1S3AX => 2
+FD1S3AY => 1
+FD1S3DX => 32
+GSR => 1
+IB => 3
+L6MUX21 => 18
+LUT4 => 1632
+OB => 18
+PFUMX => 189
+ROM256X1A => 17
+################### End Area Report ##################
+
+################### Begin BlackBox Report ######################
+TSALL => 1
+################### End BlackBox Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 2
+  Net : clk_c, loads : 488
+  Net : I2C/clk_400k, loads : 220
+Clock Enable Nets
+Number of Clock Enables: 55
+Top 10 highest fanout Clock Enables:
+  Net : SUB2/clk_c_enable_270, loads : 50
+  Net : SUB2/clk_c_enable_450, loads : 33
+  Net : I2C/clk_400k_enable_101, loads : 32
+  Net : I2C/clk_400k_enable_132, loads : 32
+  Net : SUB2/clk_c_enable_317, loads : 32
+  Net : SUB2/clk_c_enable_65, loads : 32
+  Net : I2C/clk_400k_enable_185, loads : 32
+  Net : SUB2/clk_c_enable_127, loads : 32
+  Net : SUB2/clk_c_enable_449, loads : 32
+  Net : SUB2/clk_c_enable_189, loads : 32
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : I2C/state_2, loads : 170
+  Net : I2C/state_1, loads : 170
+  Net : SUB2/command_sequence_3, loads : 70
+  Net : SUB2/command_sequence_1, loads : 67
+  Net : SUB2/lcd_state_next_1, loads : 67
+  Net : SUB2/clk_c_enable_96, loads : 64
+  Net : SUB2/clk_c_enable_158, loads : 64
+  Net : SUB2/clk_c_enable_220, loads : 64
+  Net : I2C/clk_400k_enable_39, loads : 64
+  Net : I2C/clk_400k_enable_70, loads : 64
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets \I2C/clk_400k]           |  200.000 MHz|   57.274 MHz|    37 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |  200.000 MHz|   29.156 MHz|    20 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+2 constraints not met.
+
+
+Peak Memory Usage: 152.707  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 13.063  secs
+--------------------------------------------------------------
+Done: completed successfully
+
+************************************************************
+**  Map Design                                            **
+************************************************************
+
+map -a "MachXO2" -p LCMXO2-4000HC -t CSBGA132 -s 4 -oc Commercial   "ADC_voltmeter_impl8.ngd" -o "ADC_voltmeter_impl8_map.ncd" -pr "ADC_voltmeter_impl8.prf" -mp "ADC_voltmeter_impl8.mrp" -lpf "C:/Users/admin/Desktop/Lab8(2)/impl8/ADC_voltmeter_impl8.lpf" -lpf "C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf" -c 0           
+map:  version Diamond (64-bit) 3.11.0.396.4
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+   Process the file: ADC_voltmeter_impl8.ngd
+   Picdevice="LCMXO2-4000HC"
+
+   Pictype="CSBGA132"
+
+   Picspeed=4
+
+   Remove unused logic
+
+   Do not produce over sized NCDs.
+
+Part used: LCMXO2-4000HCCSBGA132, Performance used: 4.
+
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(13): Semantic error in "IOBUF PORT "test[0]" IO_TYPE=LVCMOS33 ;": Port "test[0]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(14): Semantic error in "IOBUF PORT "test[1]" IO_TYPE=LVCMOS33 ;": Port "test[1]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(15): Semantic error in "IOBUF PORT "test[2]" IO_TYPE=LVCMOS33 ;": Port "test[2]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(16): Semantic error in "IOBUF PORT "test[3]" IO_TYPE=LVCMOS33 ;": Port "test[3]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(17): Semantic error in "IOBUF PORT "test[4]" IO_TYPE=LVCMOS33 ;": Port "test[4]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(18): Semantic error in "IOBUF PORT "test[5]" IO_TYPE=LVCMOS33 ;": Port "test[5]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(19): Semantic error in "IOBUF PORT "test[6]" IO_TYPE=LVCMOS33 ;": Port "test[6]" does not exist in the design. This preference has been disabled.
+WARNING - C:/Users/admin/Desktop/Lab8(2)/ADC_voltmeter.lpf(20): Semantic error in "IOBUF PORT "test[7]" IO_TYPE=LVCMOS33 ;": Port "test[7]" does not exist in the design. This preference has been disabled.
+Loading device for application map from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+
+Running general design DRC...
+
+Removing unused logic...
+
+Optimizing...
+
+
+
+
+Design Summary:
+   Number of registers:    737 out of  4635 (16%)
+      PFU registers:          737 out of  4320 (17%)
+      PIO registers:            0 out of   315 (0%)
+   Number of SLICEs:      1618 out of  2160 (75%)
+      SLICEs as Logic/ROM:   1618 out of  2160 (75%)
+      SLICEs as RAM:            0 out of  1620 (0%)
+      SLICEs as Carry:        669 out of  2160 (31%)
+   Number of LUT4s:        3233 out of  4320 (75%)
+      Number used as logic LUTs:        1895
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      1338
+      Number used as shift registers:     0
+   Number of PIO sites used: 22 + 4(JTAG) out of 105 (25%)
+   Number of block RAMs:  0 out of 10 (0%)
+   Number of GSRs:        1 out of 1 (100%)
+   EFB used :        No
+   JTAG used :       No
+   Readback used :   No
+   Oscillator used : No
+   Startup used :    No
+   POR :             On
+   Bandgap :         On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 2 (0%)
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
+   Number of clocks:  2
+     Net clk_c: 287 loads, 287 rising, 0 falling (Driver: PIO clk )
+     Net I2C/clk_400k: 104 loads, 104 rising, 0 falling (Driver: I2C/sub_3664_add_2_cout )
+   Number of Clock Enables:  55
+     Net SUB2/clk_c_enable_446: 5 loads, 5 LSLICEs
+     Net SUB2/clk_c_enable_27: 4 loads, 4 LSLICEs
+     Net SUB2/clk_c_enable_3: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_28: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_65: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_96: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_127: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_158: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_189: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_220: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_11: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_12: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_317: 32 loads, 32 LSLICEs
+     Net SUB2/clk_c_enable_452: 11 loads, 11 LSLICEs
+     Net SUB2/clk_c_enable_343: 3 loads, 3 LSLICEs
+     Net SUB2/clk_c_enable_344: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_34: 5 loads, 5 LSLICEs
+     Net SUB2/clk_c_enable_270: 26 loads, 26 LSLICEs
+     Net SUB2/clk_c_enable_286: 9 loads, 9 LSLICEs
+     Net SUB2/clk_c_enable_450: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_449: 17 loads, 17 LSLICEs
+     Net SUB2/clk_c_enable_445: 3 loads, 3 LSLICEs
+     Net SUB2/clk_c_enable_451: 1 loads, 1 LSLICEs
+     Net SUB2/clk_c_enable_454: 9 loads, 9 LSLICEs
+     Net SUB2/clk_c_enable_453: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_39: 16 loads, 16 LSLICEs
+     Net I2C/clk_400k_enable_70: 16 loads, 16 LSLICEs
+     Net I2C/clk_400k_enable_101: 16 loads, 16 LSLICEs
+     Net I2C/clk_400k_enable_132: 16 loads, 16 LSLICEs
+     Net I2C/clk_400k_enable_142: 2 loads, 2 LSLICEs
+     Net I2C/clk_400k_enable_6: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_7: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_8: 1 loads, 1 LSLICEs
+     Net I2C/sda_N_3743: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_184: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_178: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_177: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_185: 17 loads, 17 LSLICEs
+     Net I2C/clk_400k_enable_183: 4 loads, 4 LSLICEs
+     Net I2C/clk_400k_enable_179: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_180: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_175: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_176: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_141: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_143: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_186: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_181: 1 loads, 1 LSLICEs
+     Net I2C/clk_400k_enable_182: 1 loads, 1 LSLICEs
+     Net HC595/clk_c_enable_342: 10 loads, 10 LSLICEs
+     Net HC595/clk_c_enable_15: 1 loads, 1 LSLICEs
+     Net HC595/clk_c_enable_16: 1 loads, 1 LSLICEs
+     Net HC595/clk_c_enable_17: 1 loads, 1 LSLICEs
+     Net HC595/clk_c_enable_448: 2 loads, 2 LSLICEs
+     Net HC595/clk_c_enable_340: 3 loads, 3 LSLICEs
+     Net HC595/clk_c_enable_447: 1 loads, 1 LSLICEs
+   Number of LSRs:  23
+     Net n44240: 1 loads, 1 LSLICEs
+     Net n15889: 1 loads, 1 LSLICEs
+     Net bcd_num_3: 1 loads, 1 LSLICEs
+     Net n53: 1 loads, 1 LSLICEs
+     Net n50484: 1 loads, 1 LSLICEs
+     Net SUB2/n31260: 11 loads, 11 LSLICEs
+     Net SUB2/n31325: 17 loads, 17 LSLICEs
+     Net SUB2/n31242: 9 loads, 9 LSLICEs
+     Net SUB2/n31294: 17 loads, 17 LSLICEs
+     Net SUB2/n31258: 2 loads, 2 LSLICEs
+     Net SUB2/n31241: 3 loads, 3 LSLICEs
+     Net I2C/clk_400k: 17 loads, 17 LSLICEs
+     Net I2C/n31393: 4 loads, 4 LSLICEs
+     Net HC595/n37: 1 loads, 1 LSLICEs
+     Net HC595/n31235: 1 loads, 1 LSLICEs
+     Net HC595/n33426: 2 loads, 2 LSLICEs
+     Net SUB1/n44241: 1 loads, 1 LSLICEs
+     Net SUB1/n50446: 1 loads, 1 LSLICEs
+     Net SUB1/n44250: 1 loads, 1 LSLICEs
+     Net SUB1/n50440: 1 loads, 1 LSLICEs
+     Net SUB1/n50455: 1 loads, 1 LSLICEs
+     Net SUB1/n15835: 1 loads, 1 LSLICEs
+     Net SUB1/n15813: 1 loads, 1 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net v1_1_N_3989_6: 246 loads
+     Net n50622: 232 loads
+     Net n50611: 224 loads
+     Net n50628: 220 loads
+     Net I2C/state_1: 170 loads
+     Net I2C/state_2: 170 loads
+     Net n50596: 134 loads
+     Net SUB2/command_sequence_3: 70 loads
+     Net SUB2/lcd_state_next_1: 68 loads
+     Net v1_1_N_3989_5: 68 loads
+ 
+
+   Number of warnings:  8
+   Number of errors:    0
+
+
+
+Total CPU Time: 1 secs  
+Total REAL Time: 2 secs  
+Peak Memory Usage: 69 MB
+
+Dumping design to file ADC_voltmeter_impl8_map.ncd.
+
+ncd2vdb "ADC_voltmeter_impl8_map.ncd" ".vdbs/ADC_voltmeter_impl8_map.vdb"
+
+Loading device for application ncd2vdb from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Done: completed successfully
+
+************************************************************
+**  Map Trace                                             **
+************************************************************
+
+trce -f "ADC_voltmeter_impl8.mt" -o "ADC_voltmeter_impl8.tw1" "ADC_voltmeter_impl8_map.ncd" "ADC_voltmeter_impl8.prf"
+trce:  version Diamond (64-bit) 3.11.0.396.4
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file adc_voltmeter_impl8_map.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application trce from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.11.0.396.4
+Thu Dec 03 18:51:41 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ADC_voltmeter_impl8.tw1 -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml ADC_voltmeter_impl8_map.ncd ADC_voltmeter_impl8.prf 
+Design file:     adc_voltmeter_impl8_map.ncd
+Preference file: adc_voltmeter_impl8.prf
+Device,speed:    LCMXO2-4000HC,4
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 4096  Score: 49050514
+Cumulative negative slack: 49050514
+
+Constraints cover 1871129 paths, 1 nets, and 9028 connections (78.68% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.11.0.396.4
+Thu Dec 03 18:51:42 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ADC_voltmeter_impl8.tw1 -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml ADC_voltmeter_impl8_map.ncd ADC_voltmeter_impl8.prf 
+Design file:     adc_voltmeter_impl8_map.ncd
+Preference file: adc_voltmeter_impl8.prf
+Device,speed:    LCMXO2-4000HC,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 1871129 paths, 1 nets, and 9183 connections (80.03% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 49050514 (setup), 0 (hold)
+Cumulative negative slack: 49050514 (49050514+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 1 secs 
+Total REAL Time: 2 secs 
+Peak Memory Usage: 85 MB
+
+Done: completed successfully
+
+************************************************************
+**  VHDL Simulation File                                  **
+************************************************************
+
+ldbanno "ADC_voltmeter_impl8_map.ncd" -n VHDL -o "ADC_voltmeter_impl8_mapvho.vho" -w -neg
+ldbanno: version Diamond (64-bit) 3.11.0.396.4
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Writing a VHDL netlist using the orca library type based on the ADC_voltmeter_impl8_map design file.
+
+
+Loading design for application ldbanno from file ADC_voltmeter_impl8_map.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application ldbanno from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Converting design ADC_voltmeter_impl8_map.ncd into .ldb format.
+Writing VHDL netlist to file ADC_voltmeter_impl8_mapvho.vho
+Writing SDF timing to file ADC_voltmeter_impl8_mapvho.sdf
+INFO - ldbanno finished with 0 posted error messages.
+Total CPU Time: 3 secs 
+Total REAL Time: 3 secs 
+Peak Memory Usage: 95 MB
+Done: completed successfully
+
+************************************************************
+**  Place & Route Design                                  **
+************************************************************
+
+mpartrce -p "ADC_voltmeter_impl8.p2t" -f "ADC_voltmeter_impl8.p3t" -tf "ADC_voltmeter_impl8.pt" "ADC_voltmeter_impl8_map.ncd" "ADC_voltmeter_impl8.ncd"
+
+---- MParTrce Tool ----
+Removing old design directory at request of -rem command line option to this program.
+Running par. Please wait . . .
+
+Lattice Place and Route Report for Design "ADC_voltmeter_impl8_map.ncd"
+Thu Dec 03 18:51:47 2020
+
+PAR: Place And Route Diamond (64-bit) 3.11.0.396.4.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF ADC_voltmeter_impl8_map.ncd ADC_voltmeter_impl8.dir/5_1.ncd ADC_voltmeter_impl8.prf
+Preference file: ADC_voltmeter_impl8.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file ADC_voltmeter_impl8_map.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application par from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)   22+4(JTAG)/280     9% used
+                  22+4(JTAG)/105     25% bonded
+
+   SLICE           1618/2160         74% used
+
+   GSR                1/1           100% used
+
+
+Number of Signals: 3680
+Number of Connections: 11475
+
+Pin Constraint Summary:
+   22 out of 22 pins locked (100% locked).
+
+The following 1 signal is selected to use the primary clock routing resources:
+    clk_c (driver: clk, clk load #: 287)
+
+WARNING - Signal "clk_c" is selected to use Primary clock resources. However, its driver comp "clk" is located at "C1", which is not a dedicated pin for connecting to Primary clock resources. General routing has to be used to route this signal, and it might suffer from excessive delay or skew.
+
+The following 8 signals are selected to use the secondary clock routing resources:
+    I2C/clk_400k (driver: I2C/SLICE_451, clk load #: 104, sr load #: 17, ce load #: 0)
+    SUB2/clk_c_enable_317 (driver: SUB2/SLICE_1330, clk load #: 0, sr load #: 0, ce load #: 32)
+    SUB2/clk_c_enable_270 (driver: SUB2/SLICE_1434, clk load #: 0, sr load #: 0, ce load #: 26)
+    SUB2/clk_c_enable_65 (driver: SUB2/SLICE_1458, clk load #: 0, sr load #: 0, ce load #: 17)
+    SUB2/clk_c_enable_96 (driver: SUB2/SLICE_1405, clk load #: 0, sr load #: 0, ce load #: 17)
+    SUB2/clk_c_enable_127 (driver: SUB2/SLICE_1462, clk load #: 0, sr load #: 0, ce load #: 17)
+    SUB2/clk_c_enable_158 (driver: SUB2/SLICE_1647, clk load #: 0, sr load #: 0, ce load #: 17)
+    SUB2/clk_c_enable_189 (driver: SUB2/SLICE_1539, clk load #: 0, sr load #: 0, ce load #: 17)
+
+Signal rst_in_c is selected as Global Set/Reset.
+Starting Placer Phase 0.
+...........
+Finished Placer Phase 0.  REAL time: 3 secs 
+
+Starting Placer Phase 1.
+.................
+Placer score = 1240783.
+Finished Placer Phase 1.  REAL time: 13 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  1185503
+Finished Placer Phase 2.  REAL time: 13 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 0 out of 8 (0%)
+  General PIO: 1 out of 280 (0%)
+  PLL        : 0 out of 2 (0%)
+  DCM        : 0 out of 2 (0%)
+  DCC        : 0 out of 8 (0%)
+
+Global Clocks:
+  PRIMARY "clk_c" from comp "clk" on PIO site "C1 (PL4A)", clk load = 287
+  SECONDARY "I2C/clk_400k" from F0 on comp "I2C/SLICE_451" on site "R2C21A", clk load = 104, ce load = 0, sr load = 17
+  SECONDARY "SUB2/clk_c_enable_317" from F0 on comp "SUB2/SLICE_1330" on site "R2C21C", clk load = 0, ce load = 32, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_270" from F0 on comp "SUB2/SLICE_1434" on site "R12C18D", clk load = 0, ce load = 26, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_65" from F0 on comp "SUB2/SLICE_1458" on site "R13C31D", clk load = 0, ce load = 17, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_96" from F0 on comp "SUB2/SLICE_1405" on site "R12C18B", clk load = 0, ce load = 17, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_127" from F1 on comp "SUB2/SLICE_1462" on site "R12C18C", clk load = 0, ce load = 17, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_158" from F1 on comp "SUB2/SLICE_1647" on site "R20C16A", clk load = 0, ce load = 17, sr load = 0
+  SECONDARY "SUB2/clk_c_enable_189" from F0 on comp "SUB2/SLICE_1539" on site "R13C17B", clk load = 0, ce load = 17, sr load = 0
+
+  PRIMARY  : 1 out of 8 (12%)
+  SECONDARY: 8 out of 8 (100%)
+
+Edge Clocks:
+  No edge clock selected.
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   22 + 4(JTAG) out of 280 (9.3%) PIO sites used.
+   22 + 4(JTAG) out of 105 (24.8%) bonded PIO sites used.
+   Number of PIO comps: 22; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+---------------+------------+-----------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref |
++----------+---------------+------------+-----------+
+| 0        | 2 / 26 (  7%) | 3.3V       | -         |
+| 1        | 9 / 26 ( 34%) | 3.3V       | -         |
+| 2        | 6 / 28 ( 21%) | 3.3V       | -         |
+| 3        | 1 / 7 ( 14%)  | 3.3V       | -         |
+| 4        | 3 / 8 ( 37%)  | 3.3V       | -         |
+| 5        | 1 / 10 ( 10%) | 3.3V       | -         |
++----------+---------------+------------+-----------+
+
+Total placer CPU time: 13 secs 
+
+Dumping design to file ADC_voltmeter_impl8.dir/5_1.ncd.
+
+0 connections routed; 11475 unrouted.
+Starting router resource preassignment
+
+Completed router resource preassignment. Real time: 16 secs 
+
+Start NBR router at 18:52:03 12/03/20
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at 18:52:03 12/03/20
+
+Start NBR section for initial routing at 18:52:04 12/03/20
+Level 1, iteration 1
+89(0.04%) conflicts; 9025(78.65%) untouched conns; 31357039 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -10.376ns/-31357.039ns; real time: 25 secs 
+Level 2, iteration 1
+573(0.24%) conflicts; 7446(64.89%) untouched conns; 28645125 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.150ns/-28645.125ns; real time: 40 secs 
+Level 3, iteration 1
+523(0.22%) conflicts; 3878(33.80%) untouched conns; 30129715 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.167ns/-30129.715ns; real time: 51 secs 
+Level 4, iteration 1
+508(0.21%) conflicts; 0(0.00%) untouched conn; 29835505 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.079ns/-29835.506ns; real time: 1 mins 1 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 18:52:48 12/03/20
+Level 4, iteration 1
+490(0.20%) conflicts; 0(0.00%) untouched conn; 29743266 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.071ns/-29743.267ns; real time: 1 mins 8 secs 
+Level 4, iteration 2
+422(0.18%) conflicts; 0(0.00%) untouched conn; 29874104 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.064ns/-29874.105ns; real time: 1 mins 15 secs 
+Level 4, iteration 3
+374(0.16%) conflicts; 0(0.00%) untouched conn; 29948815 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.087ns/-29948.816ns; real time: 1 mins 24 secs 
+Level 4, iteration 4
+321(0.13%) conflicts; 0(0.00%) untouched conn; 29948815 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.087ns/-29948.816ns; real time: 1 mins 32 secs 
+Level 4, iteration 5
+268(0.11%) conflicts; 0(0.00%) untouched conn; 30229553 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.158ns/-30229.554ns; real time: 1 mins 42 secs 
+Level 4, iteration 6
+237(0.10%) conflicts; 0(0.00%) untouched conn; 30229553 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.158ns/-30229.554ns; real time: 1 mins 49 secs 
+Level 4, iteration 7
+165(0.07%) conflicts; 0(0.00%) untouched conn; 31227932 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.582ns/-31227.933ns; real time: 1 mins 57 secs 
+Level 4, iteration 8
+144(0.06%) conflicts; 0(0.00%) untouched conn; 31227932 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.582ns/-31227.933ns; real time: 2 mins 4 secs 
+Level 4, iteration 9
+121(0.05%) conflicts; 0(0.00%) untouched conn; 31193860 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.707ns/-31193.861ns; real time: 2 mins 12 secs 
+Level 4, iteration 10
+57(0.02%) conflicts; 0(0.00%) untouched conn; 31193860 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.707ns/-31193.861ns; real time: 2 mins 17 secs 
+Level 4, iteration 11
+47(0.02%) conflicts; 0(0.00%) untouched conn; 31457525 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.688ns/-31457.526ns; real time: 2 mins 21 secs 
+Level 4, iteration 12
+30(0.01%) conflicts; 0(0.00%) untouched conn; 31457525 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.688ns/-31457.526ns; real time: 2 mins 24 secs 
+Level 4, iteration 13
+22(0.01%) conflicts; 0(0.00%) untouched conn; 31649212 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.688ns/-31649.213ns; real time: 2 mins 26 secs 
+Level 4, iteration 14
+10(0.00%) conflicts; 0(0.00%) untouched conn; 31649212 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.688ns/-31649.213ns; real time: 2 mins 27 secs 
+Level 4, iteration 15
+4(0.00%) conflicts; 0(0.00%) untouched conn; 31632525 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31632.526ns; real time: 2 mins 27 secs 
+Level 4, iteration 16
+5(0.00%) conflicts; 0(0.00%) untouched conn; 31632525 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31632.526ns; real time: 2 mins 28 secs 
+Level 4, iteration 17
+5(0.00%) conflicts; 0(0.00%) untouched conn; 31632824 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31632.825ns; real time: 2 mins 28 secs 
+Level 4, iteration 18
+5(0.00%) conflicts; 0(0.00%) untouched conn; 31632824 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31632.825ns; real time: 2 mins 29 secs 
+Level 4, iteration 19
+3(0.00%) conflicts; 0(0.00%) untouched conn; 31657278 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31657.279ns; real time: 2 mins 29 secs 
+Level 4, iteration 20
+5(0.00%) conflicts; 0(0.00%) untouched conn; 31657278 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.613ns/-31657.279ns; real time: 2 mins 30 secs 
+Level 4, iteration 21
+3(0.00%) conflicts; 0(0.00%) untouched conn; 31640160 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.643ns/-31640.161ns; real time: 2 mins 30 secs 
+Level 4, iteration 22
+2(0.00%) conflicts; 0(0.00%) untouched conn; 31640160 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.643ns/-31640.161ns; real time: 2 mins 30 secs 
+Level 4, iteration 23
+2(0.00%) conflicts; 0(0.00%) untouched conn; 31638159 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.643ns/-31638.160ns; real time: 2 mins 31 secs 
+Level 4, iteration 24
+0(0.00%) conflict; 0(0.00%) untouched conn; 31638159 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.643ns/-31638.160ns; real time: 2 mins 31 secs 
+
+Start NBR section for performance tuning (iteration 1) at 18:54:18 12/03/20
+Level 4, iteration 1
+4(0.00%) conflicts; 0(0.00%) untouched conn; 31663906 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.606ns/-31663.907ns; real time: 2 mins 32 secs 
+Level 4, iteration 2
+0(0.00%) conflict; 0(0.00%) untouched conn; 31665161 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.606ns/-31665.162ns; real time: 2 mins 33 secs 
+
+Start NBR section for re-routing at 18:54:20 12/03/20
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 31658288 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -9.606ns/-31658.289ns; real time: 2 mins 33 secs 
+
+Start NBR section for post-routing at 18:54:20 12/03/20
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 5386 (46.94%)
+  Estimated worst slack<setup> : -9.606ns
+  Timing score<setup> : 33089872
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 2 mins 35 secs 
+Total REAL time: 2 mins 37 secs 
+Completely routed.
+End of route.  11475 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 33089872 
+
+Dumping design to file ADC_voltmeter_impl8.dir/5_1.ncd.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = -9.606
+PAR_SUMMARY::Timing score<setup/<ns>> = 33089.872
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.304
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 2 mins 35 secs 
+Total REAL time to completion: 2 mins 38 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+Exiting par with exit code 0
+Exiting mpartrce with exit code 0
+Done: completed successfully
+
+************************************************************
+**  Place & Route Trace                                   **
+************************************************************
+
+trce -f "ADC_voltmeter_impl8.pt" -o "ADC_voltmeter_impl8.twr" "ADC_voltmeter_impl8.ncd" "ADC_voltmeter_impl8.prf"
+trce:  version Diamond (64-bit) 3.11.0.396.4
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file adc_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application trce from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.11.0.396.4
+Thu Dec 03 18:54:26 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o ADC_voltmeter_impl8.twr -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml ADC_voltmeter_impl8.ncd ADC_voltmeter_impl8.prf 
+Design file:     adc_voltmeter_impl8.ncd
+Preference file: adc_voltmeter_impl8.prf
+Device,speed:    LCMXO2-4000HC,4
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 4096  Score: 33089872
+Cumulative negative slack: 33089872
+
+Constraints cover 1871129 paths, 1 nets, and 9350 connections (81.48% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.11.0.396.4
+Thu Dec 03 18:54:26 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o ADC_voltmeter_impl8.twr -gui -msgset C:/Users/admin/Desktop/Lab8(2)/promote.xml ADC_voltmeter_impl8.ncd ADC_voltmeter_impl8.prf 
+Design file:     adc_voltmeter_impl8.ncd
+Preference file: adc_voltmeter_impl8.prf
+Device,speed:    LCMXO2-4000HC,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 1871129 paths, 1 nets, and 9350 connections (81.48% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 33089872 (setup), 0 (hold)
+Cumulative negative slack: 33089872 (33089872+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 1 secs 
+Total REAL Time: 2 secs 
+Peak Memory Usage: 77 MB
+
+Done: completed successfully
+
+************************************************************
+**  I/O Timing Analysis                                   **
+************************************************************
+
+iotiming  "ADC_voltmeter_impl8.ncd" "ADC_voltmeter_impl8.prf"
+I/O Timing Report:
+:  version Diamond (64-bit) 3.11.0.396.4
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application iotiming from file adc_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application iotiming from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Running Performance Grade: 4
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+
+Loading design for application iotiming from file adc_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 5
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Running Performance Grade: 5
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+
+Loading design for application iotiming from file adc_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 6
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Running Performance Grade: 6
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+
+Loading design for application iotiming from file adc_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: M
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Running Performance Grade: M
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+Done.
+Done: completed successfully
+
+************************************************************
+**  IBIS Model                                            **
+************************************************************
+
+ibisgen "ADC_voltmeter_impl8.pad" "D:/lscc/diamond/3.11_x64/cae_library/ibis/machxo2.ibs"   
+IBIS Models Generator: Lattice Diamond (64-bit) 3.11.0.396.4
+
+Thu Dec 03 18:54:30 2020
+
+Comp: ADC_data_out[0]
+ Site: N13
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[1]
+ Site: M12
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[2]
+ Site: P12
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[3]
+ Site: M11
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[4]
+ Site: P11
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[5]
+ Site: N10
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[6]
+ Site: N9
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: ADC_data_out[7]
+ Site: P9
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: clk
+ Site: C1
+ Type: IN
+ IO_TYPE=LVCMOS33 
+ PULL=DOWN 
+ CLAMP=ON 
+ HYSTERESIS=SMALL 
+-----------------------
+Comp: disp_mod
+ Site: M13
+ Type: IN
+ IO_TYPE=LVCMOS33 
+ PULL=DOWN 
+ CLAMP=ON 
+ HYSTERESIS=SMALL 
+-----------------------
+Comp: flag_out
+ Site: M2
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lab8_din
+ Site: G3
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lab8_rck
+ Site: H3
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lab8_sck
+ Site: J2
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lcd_bl_out
+ Site: J13
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lcd_clk_out
+ Site: K13
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lcd_data_out
+ Site: K14
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lcd_dc_out
+ Site: J14
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: lcd_rst_n_out
+ Site: K12
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: rst_in
+ Site: L14
+ Type: IN
+ IO_TYPE=LVCMOS33 
+ PULL=DOWN 
+ CLAMP=ON 
+ HYSTERESIS=SMALL 
+-----------------------
+Comp: scl_out
+ Site: C8
+ Type: OUT
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ SLEW=SLOW 
+-----------------------
+Comp: sda_inout
+ Site: B8
+ Type: BIDI
+ IO_TYPE=LVCMOS33 
+ DRIVE=8mA 
+ PULL=DOWN 
+ CLAMP=ON 
+ HYSTERESIS=SMALL 
+ SLEW=SLOW 
+-----------------------
+Created design models.
+
+
+Generating: C:\Users\admin\Desktop\Lab8(2)\impl8\IBIS\ADC_voltmeter_impl8.ibs
+
+
+INFO - Design IBIS models are generated for board level analysis.
+
+Done: completed successfully
+
+************************************************************
+**  VHDL Simulation File                                  **
+************************************************************
+
+ldbanno "ADC_voltmeter_impl8.ncd" -n VHDL -o "ADC_voltmeter_impl8_vho.vho"         -w -neg 
+ldbanno: version Diamond (64-bit) 3.11.0.396.4
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Writing a VHDL netlist using the orca library type based on the ADC_voltmeter_impl8 design file.
+
+
+Loading design for application ldbanno from file ADC_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application ldbanno from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Converting design ADC_voltmeter_impl8.ncd into .ldb format.
+Loading preferences from adc_voltmeter_impl8.prf.
+Writing VHDL netlist to file ADC_voltmeter_impl8_vho.vho
+Writing SDF timing to file ADC_voltmeter_impl8_vho.sdf
+INFO - ldbanno finished with 0 posted error messages.
+Total CPU Time: 3 secs 
+Total REAL Time: 3 secs 
+Peak Memory Usage: 102 MB
+Done: completed successfully
+
+************************************************************
+**  Bitstream File                                        **
+************************************************************
+
+tmcheck -par "ADC_voltmeter_impl8.par" 
+
+bitgen -f "ADC_voltmeter_impl8.t2b" -w "ADC_voltmeter_impl8.ncd"  "ADC_voltmeter_impl8.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.11.0.396.4
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file ADC_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application Bitgen from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from ADC_voltmeter_impl8.prf.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                         2.08**  |
++---------------------------------+---------------------------------+
+|                  CONFIG_SECURE  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                          INBUF  |                           ON**  |
++---------------------------------+---------------------------------+
+|                      JTAG_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                       SDM_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  CONFIGURATION  |                          CFG**  |
++---------------------------------+---------------------------------+
+|                COMPRESS_CONFIG  |                           ON**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|               ONE_TIME_PROGRAM  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                 ENABLE_TRANSFR  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SHAREDEBRINIT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|            BACKGROUND_RECONFIG  |                          OFF**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 1.95.
+ 
+Saving bit stream in "ADC_voltmeter_impl8.bit".
+Total CPU Time: 2 secs 
+Total REAL Time: 3 secs 
+Peak Memory Usage: 283 MB
+Done: completed successfully
+
+************************************************************
+**  JEDEC File                                            **
+************************************************************
+
+tmcheck -par "ADC_voltmeter_impl8.par" 
+
+bitgen -f "ADC_voltmeter_impl8.t2b" -w "ADC_voltmeter_impl8.ncd"  -jedec "ADC_voltmeter_impl8.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.11.0.396.4
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file ADC_voltmeter_impl8.ncd.
+Design name: ADC_voltmeter_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CSBGA132
+Performance: 4
+Loading device for application Bitgen from file 'xo2c4000.nph' in environment: D:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from ADC_voltmeter_impl8.prf.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                         2.08**  |
++---------------------------------+---------------------------------+
+|                  CONFIG_SECURE  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                          INBUF  |                           ON**  |
++---------------------------------+---------------------------------+
+|                      JTAG_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                       SDM_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  CONFIGURATION  |                          CFG**  |
++---------------------------------+---------------------------------+
+|                COMPRESS_CONFIG  |                           ON**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|               ONE_TIME_PROGRAM  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                 ENABLE_TRANSFR  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SHAREDEBRINIT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|            BACKGROUND_RECONFIG  |                          OFF**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 1.95.
+ 
+Saving bit stream in "ADC_voltmeter_impl8.jed".
+ 
+===========
+UFM Summary.
+===========
+UFM Size:        767 Pages (128*767 Bits).
+UFM Utilization: General Purpose Flash Memory.
+ 
+Available General Purpose Flash Memory:  767 Pages (Page 0 to Page 766).
+Initialized UFM Pages:                     0 Page.
+ 
+Total CPU Time: 3 secs 
+Total REAL Time: 3 secs 
+Peak Memory Usage: 283 MB
+Done: completed successfully

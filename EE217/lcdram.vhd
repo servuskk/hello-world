@@ -1,0 +1,114 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity lcdram is
+
+	port
+	(
+		clk_in: in std_logic;
+		
+		bcd_num: in std_logic_vector(19 downto 0);
+		
+		data1_out: out std_logic_vector(0 to 179);
+		data2_out: out std_logic_vector(0 to 179);
+		data3_out: out std_logic_vector(0 to 179);
+		data4_out: out std_logic_vector(0 to 179);
+		data5_out: out std_logic_vector(0 to 179);
+		data6_out: out std_logic_vector(0 to 179)
+
+	);
+end;
+
+architecture arch of lcdram is
+
+	constant num_0: std_logic_vector(0 to 179):=("000000000000001111111100011111111110011100001110011100001110011100001110011100001110001000000100011100001110011100001110011100001110011100001110011111111110001111111100000000000000");
+	constant num_1: std_logic_vector(0 to 179):=("000000000000000000000100000000001110000000001110000000001110000000001110000000001110000000000100000000001110000000001110000000001110000000001110000000001110000000000100000000000000");
+	constant num_2: std_logic_vector(0 to 179):=("000000000000001111111100011111111110000000001110000000001110000000001110000111111110001111110100011111110000011100000000011100000000011100000000011111111110001111111100000000000000");
+	constant num_3: std_logic_vector(0 to 179):=("000000000000001111111100011111111110000000001110000000001110000000001110000111111110001111110100000111111110000000001110000000001110000000001110011111111110001111111100000000000000");
+	constant num_4: std_logic_vector(0 to 179):=("000000000000001000000100011100001110011100001110011100001110011100001110011111111110001011101100000111111110000000001110000000001110000000001110000000001110000000000100000000000000");
+	constant num_5: std_logic_vector(0 to 179):=("000000000000001111111100011111111110011100000000011100000000011100000000011111111000000111110100000011111110000000001110000000001110000000001110011111111110001111111100000000000000");
+	constant num_6: std_logic_vector(0 to 179):=("000000000000001111111100011111111110011100000000011100000000011100000000011111110000001011110100011111111110011100001110011100001110011100001110011111111110001111111100000000000000");
+	constant num_7: std_logic_vector(0 to 179):=("000000000000001111111100011111111110000000001110000000001110000000001110000000001110000000000100000000001110000000001110000000001110000000001110000000001110000000000100000000000000");
+	constant num_8: std_logic_vector(0 to 179):=("000000000000001111111100011111111110011100001110011100001110011100001110011111111110001011110100011111111110011100001110011100001110011100001110011111111110001111111100000000000000");
+	constant num_9: std_logic_vector(0 to 179):=("000000000000001111111100011111111110011100001110011100001110011100001110011111111110001011110100000111111110000000001110000000001110000000001110000011111110001111111100000000000000");
+	constant dot: std_logic_vector(0 to 179):=("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001110000000001110000000001110000000000000000000000000000000000000");
+	constant blank: std_logic_vector(0 to 179):=("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+	
+	
+begin
+	
+	process(clk_in)
+	begin
+		case(bcd_num(19 downto 16)) is
+			when "0000" => data1_out <= num_0;
+			when "0001" => data1_out <= num_1;
+			when "0010" => data1_out <= num_2;
+			when "0011" => data1_out <= num_3;
+			when "0100" => data1_out <= num_4;
+			when "0101" => data1_out <= num_5;
+			when "0110" => data1_out <= num_6;
+			when "0111" => data1_out <= num_7;
+			when "1000" => data1_out <= num_8;
+			when "1001" => data1_out <= num_9;
+			when others => null;
+		end case;
+		case(bcd_num(15 downto 12)) is			
+			when "0000" => data3_out <= num_0;
+			when "0001" => data3_out <= num_1;
+			when "0010" => data3_out <= num_2;
+			when "0011" => data3_out <= num_3;
+			when "0100" => data3_out <= num_4;
+			when "0101" => data3_out <= num_5;
+			when "0110" => data3_out <= num_6;
+			when "0111" => data3_out <= num_7;
+			when "1000" => data3_out <= num_8;
+			when "1001" => data3_out <= num_9;
+			when others => null;
+		end case;
+		case(bcd_num(11 downto 8)) is
+			when "0000" => data4_out <= num_0;
+			when "0001" => data4_out <= num_1;
+			when "0010" => data4_out <= num_2;
+			when "0011" => data4_out <= num_3;
+			when "0100" => data4_out <= num_4;
+			when "0101" => data4_out <= num_5;
+			when "0110" => data4_out <= num_6;
+			when "0111" => data4_out <= num_7;
+			when "1000" => data4_out <= num_8;
+			when "1001" => data4_out <= num_9;
+			when others => null;
+		end case;
+		case(bcd_num(7 downto 4)) is
+			when "0000" => data5_out <= num_0;
+			when "0001" => data5_out <= num_1;
+			when "0010" => data5_out <= num_2;
+			when "0011" => data5_out <= num_3;
+			when "0100" => data5_out <= num_4;
+			when "0101" => data5_out <= num_5;
+			when "0110" => data5_out <= num_6;
+			when "0111" => data5_out <= num_7;
+			when "1000" => data5_out <= num_8;
+			when "1001" => data5_out <= num_9;
+			when others => null;
+		end case;
+		case(bcd_num(3 downto 0)) is
+			when "0000" => data6_out <= num_0;
+			when "0001" => data6_out <= num_1;
+			when "0010" => data6_out <= num_2;
+			when "0011" => data6_out <= num_3;
+			when "0100" => data6_out <= num_4;
+			when "0101" => data6_out <= num_5;
+			when "0110" => data6_out <= num_6;
+			when "0111" => data6_out <= num_7;
+			when "1000" => data6_out <= num_8;
+			when "1001" => data6_out <= num_9;
+			when others => null;
+		end case;
+
+	end process;
+	data2_out <= dot;
+
+end arch;
