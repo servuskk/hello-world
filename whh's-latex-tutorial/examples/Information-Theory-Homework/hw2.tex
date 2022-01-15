@@ -1,0 +1,156 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+%\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{姓名(学号)第三章作业}%\thepage
+% 顶格写\noindent
+\begin{document}
+%\pagenumbering{arabic}
+\section*{Information Theory Homework-2}
+%姓名(学号)第三章作业.pdf
+\begin{center}
+\today
+\end{center}
+\subsection*{Assignments}
+
+3.1,\ 3.2,\ 3.4,\ 3.11.
+
+\subsection*{3.1•马尔可夫不等式与切比雪夫不等式}
+
+(a)马尔可夫不等式
+
+设$X_1=\{x|x\in X,x\geqslant t\},P_1=Pr\{X\geqslant t\},X_2=\{x|x\in X,x<t\},P_2=Pr\{X< t\}=1-P_1$,则有$EX_1\geqslant t, 0\leqslant EX_2<t$, $$\therefore \dfrac{EX}{t}=\dfrac{1}{t}P_1EX_1+\dfrac{1}{t}P_2EX_2\geqslant \dfrac{EX_1}{t}P_1\geqslant P_1$$
+
+例：$X=\{0,1\},P(X=0)=P(X=1)=\frac{1}{2},EX=\frac{1}{2},$则t=1时，有$Pr\{X\geqslant 1\}=\frac{1}{2},\frac{EX}{1}=\frac{1}{2}$使等号成立。
+
+
+(b)切比雪夫不等式
+
+由题意$EX=\sigma^2,\ Pr\{|Y-\mu|>\epsilon\}=Pr\{X>\epsilon^2\},\ \dfrac{\sigma^2}{\epsilon^2}=\dfrac{EX}{\epsilon^2}$,由（a）得$Pr\{X>\epsilon^2\}\leqslant \dfrac{EX}{\epsilon^2}$,则原不等式成立。
+
+(c)弱大数定理
+
+由题意$E\bar{Z_n}=\mu$,
+\begin{equation*}
+D\bar{Z}_n=E(\bar{Z}_n-\mu)^2=E[\frac{1}{n^2}(\sum_{i=1}^n (Z_i-\mu))^2]=\frac{1}{n^2}E[\sum_{i=1}^n(Z_i-\mu)^2]+\frac{2}{n^2}E[\sum_{i\neq j}(Z_i-\mu)(Z_j-\mu)]=\frac{n\sigma^2}{n^2}=\frac{\sigma^2}{n}
+\end{equation*} 
+
+设$X=(\bar{Z}_n-\mu)^2$,则$EX=\dfrac{\sigma^2}{n}$,由（a），（b）得不等式成立。
+
+\subsection*{3.2•AEP与互信息}
+
+\begin{equation*}
+\begin{split}
+\frac{1}{n}log\frac{p(X^n)p(Y^n)}{p(X^n,Y^n)}&=\frac{1}{n}log\prod\limits_{i=1}^n\frac{p(X_i)p(Y_i)}{p(X_i,Y_i)}\\
+&=\frac{1}{n}\sum\limits_{i=1}^nlogp(X_i)+\frac{1}{n}\sum\limits_{i=1}^nlogp(Y_i)-\frac{1}{n}\sum\limits_{i=1}^nlogp(X_i,Y_i)\\
+\end{split}
+\end{equation*}
+
+$$\therefore\lim\limits_{n\to+\infty}\frac{1}{n}log\frac{p(X^n)p(Y^n)}{p(X^n,Y^n)}=-H(X)-H(Y)+H(X,Y)=-I(X,Y)$$
+
+\subsection*{3.4•AEP}
+
+(a)$\surd$
+
+(b)$\surd$
+
+(c)由定理3.1.2，$|A^n|\leqslant 2^{n(H+\epsilon)}$,由$|A^n\cap B^n|\leqslant |A^n|$,有$$|A^n\cap B^n|\leqslant |A^n|\leqslant 2^{n(H+\epsilon)}$$
+
+(d)设$\epsilon _0=\frac{1}{2}$,由AEP和大数定理有$P_r\{X^n\in A^n\cap B^n\}\to 1$,则存在N使得当$n>N$时有$P_r\{X^n\in A^n\cap B^n\}> 1-\epsilon _0$.同定理3.1.2的证明:
+
+\begin{equation*}
+\begin{split}
+1-\epsilon _0&<P_r\{X^n\in A^n\cap B^n\}\\
+&\leqslant \sum _{x^n\in A^n\cap B^n}2^{-n(H-\epsilon )}\\
+&= 2^{-n(H-\epsilon )}|A^n\cap B^n|
+\end{split}
+\end{equation*}
+
+$\therefore |A^n\cap B^n|\geqslant (1-\epsilon _0)2^{n(H-\epsilon )}=\frac{1}{2}2^{n(H-\epsilon )}$
+\subsection*{3.11•定理3.3.1证明}
+
+(a)
+\begin{equation*}
+\begin{split}
+Pr(A\cap B)&=Pr(A)+Pr(B)-Pr(A\cup B)\\
+&>1-\epsilon _1+1-\epsilon _2 -Pr(A\cup B)\\
+&=1-\epsilon _1-\epsilon_2+(1-Pr(A\cup B))\\
+&\geqslant 1-\epsilon _1-\epsilon_2
+\end{split}
+\end{equation*}
+
+(b)由(a)$$1-\epsilon -\delta\leqslant Pr(A_\epsilon^{(n)}\cap B_\delta^{(n)})$$
+
+由概率函数定义
+\begin{equation*}
+\begin{split}
+Pr(A_\epsilon^{(n)}\cap B_\delta^{(n)})=\sum _{A_\epsilon^{(n)}\cap B_\delta^{(n)}}p(x^n)
+\end{split}
+\end{equation*}
+
+由$2^{-n(H+\epsilon)}\leqslant p(x^n)\leqslant 2^{-n(H-\epsilon)}$,
+
+\begin{equation*}
+\sum _{A_\epsilon^{(n)}\cap B_\delta^{(n)}}p(x^n)\leqslant \sum _{A_\epsilon^{(n)}\cap B_\delta^{(n)}}2^{-n(H-\epsilon)}
+\end{equation*}
+
+$A_\epsilon^{(n)}\cap B_\delta^{(n)}$中共包含元素$|A_\epsilon^{(n)}\cap B_\delta^{(n)}|$个，$ 2^{-n(H-\epsilon)}$为常数，故
+\begin{equation*}
+\sum _{A_\epsilon^{(n)}\cap B_\delta^{(n)}}2^{-n(H-\epsilon)}=|A_\epsilon^{(n)}\cap B_\delta^{(n)}|2^{-n(H-\epsilon)}
+\end{equation*}
+
+由集合性质，$A_\epsilon^{(n)}\cap B_\delta^{(n)}\subset B_\delta^{(n)} $,则$|A_\epsilon^{(n)}\cap B_\delta^{(n)}|\leqslant |B_\delta^{(n)}| $,则
+
+\begin{equation*}
+|A_\epsilon^{(n)}\cap B_\delta^{(n)}|2^{-n(H-\epsilon)}\leqslant |B_\delta^{(n)}|2^{-n(H-\epsilon)}
+\end{equation*}
+
+(c)定理3.3.1： 设$X_1,X_2,\cdots ,X_n$为服从p(x)的i.i.d序列。对$\delta < \frac{1}{2}$及任意的$\delta ^\prime >0$,如果$Pr\{B_\delta^{(n)}\}$,则对于充分大的n$$\frac{1}{n}log|B_\delta^{(n)}|>H-\delta^\prime$$
+
+证明：由(b)$$1-\epsilon -\delta\leqslant |B_\delta^{(n)}|2^{-n(H-\epsilon)}$$
+
+已知$\epsilon <\frac{1}{2}, \delta <\frac{1}{2}\Rightarrow 0<1-\epsilon-\delta <1$
+$$\therefore\frac{1}{n}log|B_\delta^{(n)}|\geqslant H-\epsilon +\frac{log(1-\epsilon-\delta) }{n} $$
+
+$(\epsilon -\frac{log(1-\epsilon-\delta)}{n})\in(\epsilon,+\infty )$,则对于任意$\delta^\prime>0$,存在$0<\epsilon<\delta^\prime$使$\epsilon -\frac{log(1-\epsilon-\delta)}{n}=\delta ^\prime $,原命题成立。
+\end{document}

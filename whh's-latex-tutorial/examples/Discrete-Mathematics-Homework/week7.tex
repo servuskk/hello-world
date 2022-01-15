@@ -1,0 +1,128 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+%\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{name\ number}%\thepage
+% 顶格写\noindent
+\begin{document}
+%\pagenumbering{arabic}
+\section*{Discrete Mathematics Homework-6}
+\begin{center}
+\today
+\end{center}
+\subsection*{Assignment}
+
+(P155)\ 7(5)\quad 8\quad 12 \quad 17(1,\ 4)\quad 27
+
+\subsection*{•7写出集合$P(P(\emptyset))\times P(P(\emptyset)) $}
+% 集合的幂集是该集合所有自己组成的集合。幂集是有一个集合构造的新集合，他也是集合的一元运算。但是幂集与原集合的层次有所不同。
+
+$ P(\emptyset)=\{\emptyset \}$
+
+$ P(P(\emptyset))=P(\{\emptyset \})=\{\emptyset , \{\emptyset \}\}$
+
+
+% 笛卡儿积也是一种集合二元运算。两个集合的笛卡儿积是他们的元素组成的有序对的集合。笛卡儿积是与原集合层次不用的集合。
+
+% 有序对$<x,y> $定义为$$ <x,y>=\{\{x\},\{x,y\}\}$$
+
+% 集合A，B的笛卡儿积$A\times B$定义为$$A\times B=\{<x,y>\mid x\in A\wedge y\in B \} $$
+
+$P(P(\emptyset))\times P(P(\emptyset))=\{\emptyset , \{\emptyset \}\}\times \{\emptyset , \{\emptyset \}\}=\{ <\emptyset,\emptyset> ,<\emptyset, \{\emptyset \}>,< \{\emptyset \},\emptyset>,< \{\emptyset \}, \{\emptyset \}>\}$
+\subsection*{•8设$B=P(P(P(\emptyset)))$}
+
+$ P(\emptyset)=\{\emptyset \}$
+
+$ P(P(\emptyset))=P(\{\emptyset \})=\{\emptyset , \{\emptyset \}\}$
+
+$ P(P(P(\emptyset)))=\{\emptyset ,\{\emptyset \},\{\{\emptyset \} \}, \{\emptyset , \{\emptyset \}\} \}$
+\subsubsection*{(1)是否$\emptyset \in B$?是否$\emptyset \subseteq B$?}
+
+$\emptyset \in B$
+
+$\emptyset \subseteq B$
+\subsubsection*{(2)是否$\{\emptyset\}\in B $?是否$\{\emptyset\}\subseteq B $?}
+
+$\{\emptyset\}\in B $
+
+$\{\emptyset\}\subseteq B $
+\subsubsection*{(3)是否$\{\{\emptyset\}\}\in B $ ?是否$\{\{\emptyset\}\}\subseteq B $？}
+
+$\{\{\emptyset\}\}\in B $
+
+$\{\{\emptyset\}\}\subseteq B $
+\subsection*{•12设全集$E=\{1,2,3,4,5 \} $,集合$A=\{1,4\} $，$B=\{1,2,5 \} $，$C=\{2,4\}$.求下列集合：}
+\subsubsection*{(1)$A\bigcap -B =\{4 \}$}
+
+\subsubsection*{(2)$(A\bigcap B) \cup -C=\{1,3,5 \}$}
+\subsubsection*{(3)$-(A\bigcap B) =\{2,3,4,5 \}$}
+\subsubsection*{(4)$P(A)\bigcap P(B) =\{\emptyset ,\{1\} \}$}
+\subsubsection*{(5)$P(A)-P(B) =\{\{4\},\{1,4\} \}$}
+
+\subsection*{•17设A,B和C是任意集合，证明：}
+\subsubsection*{(1)$(A-B)-C=A-(B\cup C) $}
+
+$A-B=A\bigcap -B$
+
+$(A-B)-C=A\bigcap -B\bigcap -C=A\bigcap -(B\cup C)=A-(B\cup C)$
+
+\subsubsection*{(4)$A\subseteq C\wedge B\subseteq C\Leftrightarrow A\cup B\subseteq C $}
+
+$A\subseteq C\wedge B\subseteq C\Rightarrow (A\cup B)\subseteq (C\cup C)\Rightarrow A\cup B\subseteq C$
+
+$A\cup B\subseteq C\Rightarrow ((A\cup B)\bigcap A \subseteq (C\bigcap A))\wedge ((A\cup B)\bigcap B \subseteq (C\bigcap B))$
+
+
+\quad \quad \quad \quad \quad $\Rightarrow (A\subseteq ( C\bigcap A) )\wedge (B\subseteq ( C\bigcap B)$
+
+
+\quad \quad \quad \quad \quad $\Rightarrow A\subseteq C\wedge B\subseteq C$
+
+得证。
+\subsection*{•27足球队有38人，篮球队有15人，排球队有20人，三个队队员共58人，其中3人同时参加三个队，问同时参加两个队的有几个。}
+
+$58=38+15+20-x_1-x_2-x_3+3$
+
+$x=(x_1-3)+(x_2-3)+(x_3-3)=12$\ (不含同时参加三个)
+
+\end{document}
