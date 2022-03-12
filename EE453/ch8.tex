@@ -1,0 +1,173 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+%\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{whh\ allesgutewh@gmail.com}%\thepage
+% 顶格写\noindent
+\begin{document}
+%\pagenumbering{arabic}
+\section*{Information Theory Homework-ch8}
+%姓名(学号)第x章作业.pdf
+\begin{center}
+\today
+\end{center}
+\subsection*{Assignments}
+
+
+8.1\ 8.2\ 8.5\ 8.8\ 8.9
+
+
+\subsection*{8.1•微分熵}
+(a)\begin{equation*}
+    \begin{split}
+        h(X)=&-\int f(x)\ln f(x) \,dx \\
+            =&-\int_0^\infty \lambda e^{-\lambda x}(\ln\lambda - \lambda x)\,dx \\
+            =&\ln\lambda e^{-\lambda x }\vert _0^\infty-\lambda (x+\frac{1}{\lambda}) e^{-\lambda x}\vert _0^\infty\\
+            =& -\ln\lambda +1 \\
+            =& \ln \dfrac{e}{\lambda}\\
+            =&\log \dfrac{e}{\lambda} bit
+    \end{split}
+\end{equation*}
+
+
+(b)\begin{equation*}
+    \begin{split}
+        h(X)=&-\int f(x)\ln f(x) \,dx \\
+            =& \frac{1}{2}\ln \dfrac{e}{\lambda} -\frac{1}{2}\int_{-\infty}^0\lambda e^{\lambda x}(\ln\lambda + \lambda x)\,dx \\
+            =& \frac{1}{2}\ln \dfrac{e}{\lambda} -\frac{1}{2}[\ln\lambda -1]\\
+            =& \ln \dfrac{e}{\lambda}\\
+            =&\log \dfrac{e}{\lambda} bit
+    \end{split}
+\end{equation*}
+
+
+(c)由题意，$X_1+X_2\sim \mathcal{N}(\mu_1+\mu_2, \sigma^2_1+\sigma^2_2) $
+
+\begin{equation*}
+    \begin{split}
+        h(X)=&-\int f(x)\ln f(x) \,dx \\
+            =&\frac{1}{2}\log 2\pi e (\sigma_1^2+\sigma_2^2)
+    \end{split}
+\end{equation*}
+
+\subsection*{8.2•行列式的凹性}
+
+假设$X_1\sim N(0,K_1), X_2\sim N(0,K_2), \theta = Bernoulli(\lambda), Z=X_\theta\Rightarrow K_Z=\lambda K_1+\bar\lambda K_2$,(注意不一定是高斯分布)
+
+$$\therefore h(Z|\theta)=p(\lambda)h(X_1)+(1-p(\lambda))h(X_2)=\lambda \frac{1}{2}log(2\pi e)^n |K_1|+\bar{\lambda}\frac{1}{2}log(2\pi e)^n|K_2|=\frac{1}{2}log(2\pi e)^n+\frac{1}{2}log |K_1|^\lambda  |K_2|^{\bar{\lambda}}$$
+
+$$h(Z)\leqslant h(X_\theta)=\frac{1}{2}log(2\pi e)^n + \frac{1}{2}|\lambda K_1+\bar{\lambda}K_2|$$
+
+$$\because h(Z|\theta)\leqslant h(Z)$$
+
+$$\therefore |K_1|^\lambda  |K_2|^{\bar{\lambda}}\leqslant |\lambda K_1+\bar{\lambda}K_2|$$
+\subsection*{8.5•尺度性质。设$h(X)=-\int f(x)logf(x)dx$，证明$h(AX)=log|det(A)|+h(X)$。}
+
+令$Y=AX$。则$f_Y(y)=\frac{1}{|det(A)|}f_X(A^{-1}y)$
+
+\begin{equation*}
+    \begin{split}
+        h(AX)=&-\int f_Y(y)log (f_Y(y))\,dy\\
+            =&-\int \frac{1}{|det(A)|}f_X(A^{-1}y)log(\frac{1}{|det(A)|}f_X(A^{-1}y))dy\\
+            =& log |det(A)| + h(X)
+    \end{split}
+\end{equation*}
+
+\subsection*{8.8•有均匀干扰噪声的信道}
+Consider a additive channel whose input alphabet $X = \{0,\pm 1, \pm 2\}$ , and whose output Y = X + Z , where Z is uniformly distributed over the interval [−1, 1] . Thus the input of the channel is a discrete random variable, while the output is continuous. Calculate the capacity $C = max_{p(x)} I(X; Y )$
+of this channel.
+
+提示：首先证明，若限定连续型随机变量X的取值范围在[a,b]上时，均匀分布使得X的微分熵最大。
+
+证明：$X\in [a, b]$,定义一个随机变量$X^{\Delta}\in \{x_i,\cdots ,x_i,\cdots\}, p(x_i)=f(x_i)\cdot\Delta$,则$X^{\Delta}$的熵为
+\begin{equation*}
+    \begin{split}
+        H(X^\Delta)=&-\sum _ip(x_i)log p(x_i)\\
+        =& -\sum _if(x_i)\Delta log f(x_i)\Delta\\
+        =&-\sum _i[f(x_i)\Delta ] log f(x_i) -log \Delta\\
+    \end{split}
+\end{equation*}
+如果$f(x)logf(x)$黎曼可积，则当$\Delta \rightarrow 0$时，$H(X^\Delta)+log\Delta \rightarrow h(X)$, 由$H(X^\Delta)$在$p(x_i)=p(x_j)=\frac{1}{N}=\frac{\Delta}{b-a}$时取最大值可知，均匀分布使得X的微分熵最大。
+
+在本题中，$Z\in[-3, 3]$,由题意知，当X的取值分布为$p(X=-2)=p(X=0)=p(X=2)=\frac{1}{3}$时，Y在[-3,3]内均匀分布，取得$h(Y)_{max}=log6$
+
+\begin{equation*}
+    \begin{split}
+        C & = max_{p(x)} I(X; Y)\\
+        & = max_{p(x)}[h(Y)-h(Y|X)]\\
+        & = max_{p(x)}[h(Y)-h(Z)]\\
+        & = max_{p(x)}H(Y) - log2\\
+        & = log6 - log2\\
+        & = log3
+    \end{split}
+\end{equation*}
+\subsection*{8.9•高斯互信息。假设(X,Y,Z)是联合高斯分布，并且$X\rightarrow Y\rightarrow Z$构成一个马尔可夫链。令(X,Y)与（X，Z）的相关系数分别为$\rho _1, \rho _2$。求I(X;Z)}
+由题意，X与Z的协方差矩阵
+\[
+    K = \begin{bmatrix}
+     \sigma_x^2 & \sigma_x\sigma_z\rho_{xz} \\
+     \sigma_x\sigma_z\rho_{xz}& \sigma_y^2
+    \end{bmatrix}
+\]
+
+\begin{equation*}
+     \begin{split}
+        \therefore I(X;Z)=& h(X)+h(Z)-h(X,Z)\\
+        =& \frac{1}{2}log 2\pi e\sigma_x^2+\frac{1}{2}log 2\pi e\sigma_z^2-\frac{1}{2}log (2\pi e)^2|K|\\
+        =&\frac{1}{2}log \frac{\sigma_x^2\sigma_y^2}{\sigma_x^2\sigma_y^2(1-\rho_{xz}^2)}\\
+        =&-\frac{1}{2}log (1-\rho_{xz}^2)
+    \end{split}
+\end{equation*}
+
+不妨假设X，Y，Z的均值均为0，则有
+\begin{equation*}
+    \begin{split}
+        \rho_{xz}=&\dfrac{E[XZ]}{\sigma_x \sigma_z}\\
+        =& \dfrac{E(E[XZ|Y])}{\sigma_x \sigma_z}\\
+        =& \dfrac{E(E[X|Y]E[Z|Y])}{\sigma_x \sigma_z}\\
+        =& \dfrac{\sigma _x\rho_1\sigma_z\rho_2}{\sigma_x \sigma_z}\\
+        =& \rho_1\rho_2
+    \end{split}
+\end{equation*}
+$$\therefore I(X;Z)=-\frac{1}{2}\log (1-\rho_1^2\rho_2^2)$$
+\end{document}

@@ -1,0 +1,225 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+%\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{whh\ allesgutewh@gmail.com}%\thepage
+% 顶格写\noindent
+\begin{document}
+%\pagenumbering{arabic}
+\section*{Information Theory Homework-ch7}
+%姓名(学号)第x章作业.pdf
+\begin{center}
+\today
+\end{center}
+\subsection*{Assignments}
+
+
+7.1, 7.2, 7.5, 7.13, 7.18, 7.20, 7.22, 7.28(a)(c), 7.29, 7.32, 7.33 
+
+
+\subsection*{7.1•输出的预处理}
+（a）$X\rightarrow Y\rightarrow g(Y) $构成马尔科夫链，则$I(X;Y)\geqslant I(X;g(Y))$
+
+$C=max_{p(x)}I(X;Y)\geqslant max_{p(x)}I(X;g(Y))=C^\prime$，很显然不能增大容量。
+
+（b）由（a）知，仅在等号成立时不会严格减少容量。
+
+此时$I(X;Y)= I(X;g(Y))$,当且仅当$I(X;Y|g(Y))=0$（即$X\rightarrow g(Y)\rightarrow Y$构成马尔科夫链）时等号成立。
+
+
+\subsection*{7.2•可加噪声信道}
+$Y = X + Z$
+
+\begin{itemize}
+    \item 当a=0时，$Y=X, C=max_{p(x)}I(X,Y)=max_{p(x)}H(X)=1 bit$
+    \item 当a=1时，$\mathcal{Y} =\{0,1,2\}, C=max_{p(x)}I(X,Y)=max_{p(x)}H(X)-H(X|Y)=1-\frac{1}{2}=\frac{1}{2} bit$
+    \item 当a=-1时，$\mathcal{Y} =\{-1,0,1\}, C=max_{p(x)}I(X,Y)=max_{p(x)}H(X)-H(X|Y)=\frac{1}{2} bit$
+    \item 当$a\neq 0,\pm 1$时，$\mathcal{Y} =\{0,1,a,1+a\}, C=max_{p(x)}I(X,Y)=max_{p(x)}H(X)-H(X|Y)=1 bit$
+\end{itemize}
+\subsection*{7.5•同时使用两个信道}
+\begin{equation*}
+    \begin{split}
+        C=&maxI(X_1,X_2;Y_1,Y_2)\\
+        =&max[H(Y_1,Y_2)-H(Y_1,Y_2|X_1,X_2)]\\
+        =&max[H(Y_1,Y_2)-H(Y_1|X_1,X_2)-H(Y_2|X_1,X_2)]\\
+        =&max[H(Y_1,Y_2)-H(Y_1|X_1)-H(Y_2|X_2)]\\
+        \leqslant & max[H(Y_1)+H(Y_2)-H(Y_1|X_1)-H(Y_2|X_2)]\\
+        =& max[I(X_1;Y_1)+I(X_2;Y_2)]\\
+        =& C_1+C_2
+    \end{split}
+\end{equation*}
+
+当且仅当$H(Y_1,Y_2)= H(Y_1)+H(Y_2)$时取等号，此时有
+\begin{equation*}
+    \begin{split}
+        p(y_1,y_2)&=p(y_1,y_2|x_1,x_2)p(x_1,x_2)\\
+        &=p(y_1|x_1)p(y_2|x_2)p(x_1,x_2)\\
+        &=p(y_1)p(y_2)\\
+        &=p(y_1|x_1)p(x_1)p(y_2|x_2)p(x_2)
+    \end{split}
+\end{equation*}
+
+得$p(x_1,x_2)=p(x_1)p(x_2)$,其中$x_1,x_2$分别取取得$C_1,C_2$ 时的分布。
+\subsection*{7.13•二元信道中的擦除与出错}
+(a)\begin{equation*}
+    \begin{split}
+        C &= max_{p(x)}I(X;Y)\\
+        &= max_{p(x)}(H(Y)-H(Y|X))\\
+        &= max_{p(x)}H(Y)-H(1-\epsilon-\alpha, \epsilon, \alpha)\\
+    \end{split}
+\end{equation*}
+设$p(x=1)=\pi, p(x=0)=1-\pi$,则
+\begin{equation*}
+    \begin{split}
+        H(Y) &= H((1-\pi)(1-\epsilon-\alpha)+\epsilon\pi, \alpha, \pi(1-\alpha-\epsilon)+(1-\pi)\epsilon)\\
+        &= H(\alpha) + (1-\alpha)H(\dfrac{(1-\pi)(1-\epsilon-\alpha)+\epsilon\pi}{1-\alpha},\dfrac{\pi(1-\alpha-\epsilon)+(1-\pi)\epsilon}{1-\alpha})\\
+        &\leqslant H(\alpha)+(1-\alpha)
+    \end{split}
+\end{equation*}
+当且仅当$\dfrac{(1-\pi)(1-\epsilon-\alpha)+\epsilon\pi}{1-\alpha}=\dfrac{\pi(1-\alpha-\epsilon)+(1-\pi)\epsilon}{1-\alpha}=\frac{1}{2}$时取等号，此时$ \pi=\frac{1}{2}$.
+
+\begin{equation*}
+    \begin{split}
+        \therefore C &= max_{p(x)}H(Y)-H(1-\epsilon-\alpha, \epsilon, \alpha)\\
+        &= H(\alpha)+(1-\alpha)-H(1-\epsilon-\alpha, \epsilon, \alpha)\\
+        &= (1-\alpha)(1-H(\dfrac{1-\epsilon-\alpha}{1-\alpha},\dfrac{\epsilon}{1-\alpha}))
+    \end{split}
+\end{equation*}
+
+(b)$C=1-H(\epsilon)$
+
+(c)$C=1-\alpha$
+
+\subsection*{7.18•信道容量}
+(a)$$C=max_{p(x)}I(X;Y)=log|\mathcal{Y} |-H(\textbf{r})=log3-log3=0 bit $$
+
+(b)$$ C=max_{p(x)}I(X;Y)=log|\mathcal{Y} |-H(\textbf{r})=log3-1 \approx 0.58bit $$
+
+(c)这个信道可以看做是两个信道并联，则有$C_1 = 1-H(p),C_2 = 1-H(q)$,由$2^C = 2^{C_1}+2^{C_2}$得
+$$C = log(2^{1-H(p)}+2^{1-H(q)}) $$
+% 设$p_i=Pr(x=i)$
+% \begin{equation*}
+%     \begin{split}
+%         C=&max_{p(x)}I(X;Y)\\
+%         =&max_{p(x)}(H(Y)-H(Y|X)) \\
+%         =&(p_0p+p_1(1-p))log\frac{1}{p_0p+p_1(1-p)}+(p_0(1-p)+p_1p)\frac{1}{p_0(1-p)+p_1p}\\
+%         &+(p_2+p_3(1-q))log\frac{1}{p_2q+p_3(1-q)}+(p_2(1-q)+p_3q)\frac{1}{p_2(1-q)+p_3q}\\
+%         &-(p_0+p_1)H(p)-(p_2+p_3)H(q)\\
+%         =& \Box bit
+%     \end{split}
+% \end{equation*}
+% 这个真不会了，咋做啊……大胆猜测$p_0=p_1,p_2=p_3$后面就不会了
+\subsection*{7.20•在输出Y上带两个独立观察的信道}
+(a)\begin{equation*}
+    \begin{split}
+        I(X;Y_1,Y_2)=&H(Y_1,Y_2)-H(Y_1,Y_2|X)\\
+        =& H(Y_1)+H(Y_2|Y_1)-H(Y_1,Y_2|X)\\
+        \because Y_1,Y_2 iid\Rightarrow &I(Y_1;Y_2)=0, H(Y_1)=H(Y_2)\\
+        \therefore I(X;Y_1,Y_2)=&H(Y_1)+H(Y_2)-H(Y_1|X)-H(Y_2|X)\\
+        =& 2I(X;Y_1)\\
+        =&2I(X;Y_1)-I(Y_1;Y_2)
+    \end{split}
+\end{equation*}
+
+(b)
+
+信道$X\rightarrow Y_1$的容量$C=maxI(X;Y_1)$;
+
+信道$X\rightarrow (Y_1,Y_2)$容量$C^\prime = max I(X;Y_1,Y_2)=max (2I(X;Y_1)-I(Y_1;Y_2))$;
+
+$\because I(Y_1;Y_2)\geqslant 0$
+
+$\therefore C^\prime \leqslant 2C$
+
+\subsection*{7.22•添加信号会降低容量吗？}
+信道转移矩阵$p(y|x)$表示x行y列，添加一行表示添加了一个x，对应概率均为0，此时H(Y),H(Y|X)均不受影响，故容量不变。
+\subsection*{7.28•信道的选取}
+（a）设两个信道组成的新信道的输出为Z，$Pr(Z=Y_1)=\alpha,Pr(Z=Y_2)=(1-\alpha)$,由题意$X\rightarrow Y\rightarrow Z$,即$I(X;Z|Y)=0$，则有
+\begin{equation*}
+    \begin{split}
+        C = &max I(X;Y,Z)\\
+        = & max(I(X;Y|Z)+I(X;Z))\\
+        = & max (I(X;Z|Y)+I(X;Y))\\
+        = & maxI(X;Y)\\
+        \therefore I(X;Y)=&I(X;Y|Z)+I(X;Z)\\
+        =&\alpha I(X;Y_1)+(1-\alpha)I(X;Y_2)+H(Z)-H(Z|X)\\
+        =&\alpha I(X;Y_1)+(1-\alpha)I(X;Y_2)+H(\alpha)\\
+        \therefore C = &max (\alpha C_1 +(1-\alpha)C_2 +H(\alpha))
+    \end{split}
+\end{equation*}
+对$\alpha$求导得，$C\prime = C_1-C_2 -log\alpha -1 +log (1-\alpha)+1=C_1-C_2-log\frac{\alpha}{1-\alpha}$,在$C_1-C_2=log\frac{\alpha}{1-\alpha}$时取得极大值$C = C_1+log(1+\frac{2^{C_1}}{2^{c_2}}$,此时$2^C=2^{C_1}\times (1+\frac{2^{C_1}}{2^{c_2}})=2^{C_1}+2^{C_2}$
+
+（b）虽然这个b不用做，但是我2-10的那个解释就不太会，能不能给个标准答案啊，非常感谢！
+
+（c）$C_1 = 1-H(p)$
+
+$C_2 = 0$
+
+$C=log(2^{C_1}+2^{C_2})=log(2^{1-H(p)}+1)$
+\subsection*{7.29•信源与信道}
+$C = 1-H(p)$
+
+$H (\mathcal{V} )=H(\alpha)$
+
+$\therefore H(\alpha)< 1-H(p)$
+
+\subsection*{7.32•信道容量}
+(a)$C = log(2\times 2^{1-H(p)})=2-H(p)$
+
+(b)$C = log(2^{C_1}+2^{C_2})=log(2^{1-H(p)}+1)$
+
+(c)$C_1 = log3 - 1 =log\frac{3}{2}bit$
+
+\quad \ $C_2 = log2 - 1 = 0bit$
+
+\quad $\therefore C = log(2^{C_1}+2^{C_2})=log\frac{5}{2}$
+
+(d)弱对称$C = log|\mathcal{Y}|-H(\frac{2}{3},\frac{1}{3})= log3 +\frac{2}{3}log\frac{2}{3}+\frac{1}{3}log\frac{1}{3}=\frac{2}{3}bit$
+
+\subsection*{7.33•信道容量}
+(a)相当于$\mathcal{P}$与一个单字符信道并联；
+$C_1 = C , C_2 = 0 \Rightarrow\tilde{C} = log(1+2^C) $
+
+(b)相当于$\mathcal{P}$与一个传输矩阵为$I_k$的信道并联；$C_1 = C , C_2 = logk \Rightarrow\tilde{C} = log(k+2^C) $
+
+\end{document}

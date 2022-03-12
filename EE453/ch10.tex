@@ -1,0 +1,140 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+%\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{whh\ allesgutewh@gmail.com}%\thepage
+% 顶格写\noindent
+\begin{document}
+%\pagenumbering{arabic}
+\section*{Information Theory Homework-ch10}
+%姓名(学号)第x章作业.pdf
+\begin{center}
+\today
+\end{center}
+\subsection*{Assignments}
+
+
+10.1，\ 10.5,\  10.8,\  10.14 
+
+
+\subsection*{10.1•单个高斯随机变量的1bit量化}
+设最佳再生点为$a_1,a_2$，由题意$X\sim\mathcal{N}(0,\sigma^2)$，有$a_1=-a_2=a$，不妨设a>0则
+\begin{equation*}
+    \begin{split}
+        a = &\frac{\int_0^\infty xf(x)dx}{\int_0^\infty f(x)dx}\\
+        =&\int_{0}^{\infty}\frac{2x}{\sqrt{2\pi\sigma^2}}e^{-\frac{x^2}{2\sigma^2}}dx\\
+        =&\sqrt{\frac{\sigma^2}{2\pi}}\int_0^\infty e^{-t}dt\\
+        =& \sqrt{\frac{2}{\pi}}\sigma
+    \end{split}
+\end{equation*}
+期望失真：
+\begin{equation*}
+    \begin{split}
+        2\int_0^\infty f(x)(x-a)^2dx=& \sigma^2 -4a\int_0^\infty xf(x)dx +a^2\\
+        =&\sigma^2 - a^2\\
+        =& (1-\frac{2}{\pi})\sigma^2
+    \end{split}
+\end{equation*}
+
+$D = \sigma^22^{-2R}=\frac{\sigma^2}{4}$
+
+$\frac{1}{4}=0.25$
+
+$1-\frac{2}{\pi}\approx 0.36 > 0.25$
+
+$\therefore (1-\frac{2}{\pi})\sigma^2>D$
+\subsection*{10.5•具有汉明失真度量的均匀分布信源的率失真}
+\begin{equation*}
+    \begin{split}
+        R(D)=& min I(X;\hat{X})\\
+        I(X;\hat{X})=& H(X) - H(X|\hat{X})\\
+        \geqslant &  log m - H(D) - D\log(m-1)\ (P22\ Fano)\\
+    \end{split}
+\end{equation*}
+$1-D = \frac{D}{m-1}\Rightarrow D = \frac{m-1}{m}$时等号成立。
+
+$\therefore R(D)=(log m - H(D) - D\log(m-1))^+\ (D>\frac{m-1}{m}$时取0$)$
+\subsection*{10.8•平方误差失真度量意义下的率失真函数的界}
+\begin{equation*}
+    \begin{split}
+        R(D)=& min I(X;\hat{X})\\
+        I(X;\hat{X})=& h(X) - h(X|\hat{X})\\
+            =& h(X) - h(X-\hat{X}|\hat{X})\\
+            \geqslant & h(X) - h(X-\hat{X})\\
+            \geqslant & h(X) - \frac{1}{2}\log 2\pi e D\\
+    \end{split}
+\end{equation*}
+
+$\therefore R(D)\geqslant h(X) - \frac{1}{2}\log 2\pi e D$
+
+图中信道$\hat{X}=\frac{\sigma^2-D}{\sigma^2}(X+Z)$
+
+$E(X-\hat{X})^2=\frac{1}{\sigma^4}E(DX - (\sigma^2 - D)Z)^2 = \frac{1}{\sigma^4}(D^2\sigma^2 +D\sigma^4 -D^2\sigma^2)=D$。
+
+$I(X;\hat{X})=h(\hat{X})-h(\frac{\sigma^2-D}{\sigma^2}Z)=\frac{1}{2}\log (\sigma^2-D)-\frac{1}{2}\log (\frac{D(\sigma^2-D)}{\sigma^2})=\frac{1}{2}\log \frac{\sigma^2}{D}$
+
+$\because R(D)=min I(X;\hat{X})$
+
+$\therefore R(D)\leqslant \frac{1}{2}\log \frac{\sigma^2}{D}$
+
+$\therefore h(X) - \frac{1}{2}\log 2\pi e D\leqslant R(D)\leqslant \frac{1}{2}\log \frac{\sigma^2}{D}$
+
+
+描述起来更容易，因为高斯随机变量的$h(X)=\frac{1}{2}log2\pi e\sigma^2$,上述不等式的上界下界相同，不需要用不等式描述。
+\subsection*{10.14•两个独立信源的率失真}
+（a）由$X_i, Y_i$独立知，$h(XY)=h(X)+h(Y)$
+\begin{equation*}
+    \begin{split}
+        R_{X,Y}(D)=& min I(X,Y;\hat{X},\hat{Y})\\
+        I(X,Y;\hat{X},\hat{Y})=& h(XY) - h(XY|\hat{X}\hat{Y})\\
+            =& h(X)+h(Y) - h(X|\hat{X}\hat{Y})-h(Y|X\hat{X}\hat{Y})\\
+            \geqslant & h(X) - h(X|\hat{X})+h(Y) - h(Y|\hat{Y})\\
+            =& I(X;\hat{X})+I(Y;\hat{Y})\\
+    \end{split}
+\end{equation*}
+$\therefore R_{X,Y}(D)=min_{X,Y} I(X,Y;\hat{X},\hat{Y})\geqslant min_X I(X;\hat{X})+ min_YI(Y;\hat{Y})=R_Y(D)+R_X(D)$
+
+（b）$I(X,Y;\hat{X},\hat{Y})\geqslant I(X;\hat{X})+I(Y;\hat{Y})$等号成立的条件是$h(X|\hat{X}\hat{Y}) =  h(X|\hat{X});\ h(Y|X\hat{X}\hat{Y})=h(Y|\hat{Y})$。该条件在X Y、$\hat{X} \hat{Y}$相互独立时是成立的，不妨假设当满足独立条件时有分布取得$R_X(D_1)=min_{p(\hat{x}|x):Ed(x-\hat{x}\leqslant D_1)}I(X;\hat{X})$、$R_Y(D_2)=min_{p(\hat{y}|y):Ed(x-\hat{y}\leqslant D_2)}I(Y;\hat{Y})$,这两个分布相加即可得到$R_{X,Y}(D)$，等式成立。
+
+在XY及$\hat{X}\hat{Y}$独立时，没有区别。
+\end{document}
