@@ -1,0 +1,268 @@
+%用来打印中文
+\documentclass[UTF8]{ctexart}
+\RequirePackage{iftex}
+\RequirePackage{fix-cm}
+\RequirePackage{fixltx2e}
+%页面设置
+\RequirePackage{geometry}
+\if@twoside
+ \geometry{a4paper,
+ bindingoffset = 2cm,
+ inner = 0.5cm,
+ outer = 2cm,
+ top = 3cm,
+ bottom = 2cm
+ }
+\else
+ \geometry{a4paper,
+ left = 2cm,
+ right = 2cm,
+ top = 2cm,
+ bottom = 2cm
+ }
+%各种包
+\usepackage{fancyhdr}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\RequirePackage{caption}
+\RequirePackage{diagbox}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{booktabs}
+\usepackage{listings}%代码
+%矩阵
+\usepackage{amsmath,xcolor}
+\RequirePackage{longtable}
+\RequirePackage{array}
+%页眉
+\RequirePackage{float}
+\RequirePackage{flowchart}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lhead{} \rhead{此处是页眉}
+%如果需要有标题页，把以下两行放到\begin{document}之后，写作业的话大可不必
+%\title{标题}
+%\maketitle%显示标题和日期
+\begin{document}  
+\section{一级标题}
+\subsection{二级标题}
+本人是一名练习时长8个月的Latex菜鸡用户，网课期间针对需要用latex提交作业的科目写了这样一篇小小的汇总，希望可以帮助大家节约排版时间~
+\textbf{（本文以完成作业为最高目标做了一个常用汇总，想到哪写到哪，不全面且无逻辑）}
+
+所以，用过Latex的小伙伴就不需要看了……
+\subsubsection{三级标题}
+一些基本的坑：
+\begin{enumerate}
+\item[•]本文内容代码和PDF同时打开食用效果更佳！自认为代码里的注释还比较详细？
+\item[•]最前面的那一堆（看代码）一定要有，否则不能编译通过。如果能找到合适的，找一个模板吧，上面那一堆就可以直接换成一行调用模板了。
+\item[•]写公式一定要用\$ 或者displaymath等，不能直接写在正文里；如果公式或数学符号出现在一句话里且不需要单独一行，前后分别使用一个\$,如果需要换行，就是公式或字母单独一行，前后分别要用两个\$.
+\item[•] 你看到的换行不是真正的换行，真正的换行是空一行。
+\item[•]如果需要显示Latex 的保留字符，比如注释的百分号，要这样写：\%
+\item[•]空格也要这样写\ ,如果要空比较大的格\quad 用quad。
+\item[•]使用\textbf{XELATEX}编译！！！！！！
+\end{enumerate}
+\subsection{常用汇总}
+\textbf{下标}用下划线，如果下标不止一位，要使用\{ \}
+$$t_0$$
+$$t_{10}$$
+
+\textbf{上标}用\^,不止一位用\{\}
+$$e^x$$
+$$e^{2x}$$
+
+
+\textbf{向量}$\vec{B}$
+
+%矩阵
+\subsection{矩阵：} 
+\begin{displaymath}
+\vec{B}\times\vec{C}= \left[
+\begin{matrix}
+   \vec{a}_x & \vec{a}_y & \vec{a}_z \\
+   0 & -4 & 1 \\
+   5 & 0 & -2
+\end{matrix}
+\right] =8\vec{a}_x+5\vec{a}_y+20\vec{a}_z
+\end{displaymath}
+
+%使用ref引用文中的图表会自动编号
+\subsection{表格：}
+如表\ref{tab:引用名称}：
+\begin{table}[H]%表格
+    \centering
+    \caption{显示在论文里的表格名}
+    \label{tab:引用名称}
+    \begin{tabular}{c c}%设置列数
+\hline
+    	Symbol & Definition\\
+\hline
+	$N$ & total population\\
+	$S(t)$ & number of susceptible people at time $t$\\
+\hline
+    \end{tabular}
+\end{table}
+
+\subsection{希腊字母：} 
+如表\ref{tab:希腊字母}:
+\begin{table}[H]
+\centering
+\caption{希腊字母}
+\label{tab:希腊字母}
+\begin{tabular}{|c c c c|}
+\hline
+$\alpha$ &$\beta$ &$\gamma$ &$\delta$ \\
+$\epsilon$ &$\varepsilon $ &$\zeta$ &$\eta$ \\
+$\theta$ &$\vartheta$ &$\iota$ &$\kappa$ \\
+$\lambda$ &$\mu$ &$\nu$ &$\xi$ \\
+$\pi$ &$\varpi$ &$\rho$ &$\varrho$ \\
+$\sigma$ &$\varsigma$ &$\tau$ &$\upsilon$\\
+$\phi$ &$\varphi$ &$\chi$ &$\psi$\\
+$\omega$ &$\Gamma$ &$\Delta$ &$\Theta$\\
+$\Lambda$ &$\Xi$ &$\Pi $&$\Sigma$\\
+$\Upsilon$ &$\Phi $&$\Psi$ &$\Omega$\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{分数：} 
+$\dfrac{A}{B}$
+
+\subsection{方程组：} 
+带花括号的方程组：
+%displaymath里不能有空行
+\begin{displaymath}
+v_{(t)}=\begin{cases}
+\dfrac{N_{0}-N_{1}}{t_{1}},&0<t<t_{1}\cr
+C_1e^{C_2-C_1t},&t>t_1\end{cases}
+\end{displaymath}
+
+带编号的方程：
+\begin{equation}
+a+b=c
+\end{equation}
+\subsection{积分：} 
+$$\displaystyle{\int_{t_0}^{t_0+T(t_0)}} v_{(t)}dt = \displaystyle {\int_{t_0}^{t_0+T(t_0)}} \dfrac{N+Q(t_0)+ \theta N(t_0)}{T(t_0)}dt$$
+\subsection{求和求导极限：} 
+这里有个整理的比较好的：https://www.cnblogs.com/liangjianli/p/11616847.html
+这个博客整理的很好，加上这个PDF里写作业应该就足够了！如果要写论文建议去找个模板，省时省力。
+\subsection{列举：} 
+列举1（这个没有编号）：
+\begin{enumerate}
+\item[第一条]前面的序号可以自己指定，不会自动编号
+\item[第二条]
+\end{enumerate}
+
+列举2（自动编号）：
+（我写作业一般用这个，把题干加粗看起来就8错）
+\begin{enumerate}
+\item 第一条
+\item 第二条
+\item \textbf{电子计算机一般分成哪些组成部分?为什么要分成这些组成部分?}
+%换行要空一行！（写了注释就不算空行了，所以这里又空了一行）
+
+运算器、存储器、控制器、输入单元、输出单元。
+
+\end{enumerate}
+
+
+\subsection{figures and tables}
+\begin{figure}[h]
+    \centering
+      \includegraphics[width=10cm]{/Users/whh/Documents/MATLAB/random/question3-0.png} 
+      \caption{单张图片} 
+     \label{fig:q3-0}
+  \end{figure}
+
+\begin{figure}[!htp]
+    \centering
+    \begin{subfigure}
+      \centering
+      \includegraphics[height=6cm]{/Users/whh/Documents/MATLAB/random/question2-5(v3).png}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}
+      \centering
+      \includegraphics[height=6cm]{/Users/whh/Documents/MATLAB/random/question2-6(v4).png}
+    \end{subfigure}
+    \caption{两张图并列}
+    \label{fig:q2-v2}
+  \end{figure}
+
+  \begin{minipage}{\textwidth}
+
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+    \makeatletter\def\@captype{table}
+    \begin{tabular}{cc}
+        \toprule
+        参数&值\\
+        \hline
+        $\alpha$& $ 1$\\
+        $v   $  &$   10$   \\
+        $\sigma$  &$  1 $   \\
+        $x_0   $  &$ 10  $   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Monte Caro方法计算$E(X_1),D(X_1)$参数}
+    \label{tab:q2}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+    \makeatletter\def\@captype{table}
+    \begin{tabular}{ccc}
+        \toprule
+        序号&$EX_1$&$DX_1$\\
+        \hline
+       1&10.0059  &  0.4376\\
+        2&10.0132  &  0.4335\\
+        3&9.9931    &0.4296\\
+        \hline
+        AVG&10.0041&0.4455\\
+        \bottomrule
+    \end{tabular}
+    \caption{$E(X_1),D(X_1)$计算结果}
+    \label{tab:q2-2}
+    \end{minipage}
+    \end{minipage}
+
+\newpage
+\appendix
+\textbf{附录}
+
+\section{用来贴代码，当然格式有好多种，不列举了}
+\begin{lstlisting}
+%直接复制法
+mu1=0;
+sigma1=25;
+mu2=100;
+sigma2=1;
+X=normrnd(mu1,sigma1,[1 10000]);
+Y=normrnd(mu2,sigma2,[1 10000]);
+n=unifrnd(0,1,1,10000);
+p=0.3;
+n(n>p)=0;
+n(n>0)=1;
+
+Z=X+n.*Y;
+[counts,centers] = hist(Z, 300);
+figure
+bar(centers, counts / sum(counts))
+title("Figure1")
+\end{lstlisting}
+\section{另一种：使用文件}
+\lstinputlisting[language=Matlab]{go.m}
+\section{写在最后}
+看到这里，应该就算是可以正常使用latex了，如果在使用没有提到过的功能，直接上网搜就行，如果出现报错，有几个建议：
+\begin{enumerate}
+\item 检查是否安装了所使用的结构的库
+\item 检查是否有括号或者\$没有补全
+\item 参考文献使用.bib文件时，编译的顺序时：XELatex->bibtex->XElatex(都是编译.tex文件，不需要编译.bib！！！！！)
+\item 还有一个我之前整理的半成品，有兴趣可以看看：https://shimo.im/docs/qxPwK33KwghrtjJt/ 
+《latex常用汇总》，可复制链接后用石墨文档 App 或小程序打开
+\item \textbf{奇淫巧计：}如果有什么不会用latex解决或者觉得用latex太麻烦的问题，可以尝试一下编辑PDF（Adobe Acrobat DC大法好）
+\item \textbf{IEEE论文写作及作业示例} IEEE英文模板见官网，作业示例见文件夹examples
+\end{enumerate}
+emm好了，结束了。
+
+第一次编辑：2020/03/14
+\end{document}  
